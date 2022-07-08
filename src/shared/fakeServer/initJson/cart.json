@@ -1,0 +1,44 @@
+{
+  "cart": [
+    {
+      "user": "1",
+      "products": []
+    },
+    {
+      "user": "2",
+      "products": []
+    },
+    {
+      "user": "3",
+      "products": []
+    },
+    {
+      "user": "4",
+      "products": []
+    },
+    {
+      "user": "5",
+      "products": []
+    },
+    {
+      "user": "6",
+      "products": []
+    },
+    {
+      "user": "7",
+      "products": []
+    },
+    {
+      "user": "8",
+      "products": []
+    },
+    {
+      "user": "9",
+      "products": []
+    },
+    {
+      "user": "10",
+      "products": []
+    }
+  ]
+}
