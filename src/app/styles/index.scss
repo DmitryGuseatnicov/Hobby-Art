@@ -1,0 +1,31 @@
+
+@import 'app/styles/fonts.scss';
+@import 'app/styles/reset.scss';
+@import 'shared/styles/var-and-mixin.scss';
+
+html {
+  color: $text_color;
+  background: #FAF9F9;
+
+  @extend %body_text-big;
+}
+
+.wrapper {
+  @extend %wrapper;
+}
+
+.main {
+  @extend %main;
+}
+
+.footer {
+  @extend %footer;
+}
+
+.container {
+  @extend %container;
+}
+
+.container-fluid {
+  @extend %container-fluid;
+}

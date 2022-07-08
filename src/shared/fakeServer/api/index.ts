@@ -15,12 +15,16 @@ const user = {
         } else {
           resolve(userService.getByParams(params));
         }
-      });
+      }, 500);
     });
   },
 
   post(params: INewUser) {
-    return userService.create(params);
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(userService.create(params));
+      }, 500);
+    });
   },
 
   put(id: string, params: Partial<IUser>) {
