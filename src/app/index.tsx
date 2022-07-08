@@ -12,13 +12,12 @@ import {
   Products,
   Refund
 } from 'pages';
-import { userModel } from 'entities/user';
 
 import Layout from './Layout';
 import 'app/styles/index.scss';
 
 const App = () => {
-  const isAuth = userModel.useAuth();
+  const isAuth = true;
 
   return (
     <Routes>

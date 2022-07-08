@@ -1,14 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import { BrowserRouter } from 'react-router-dom';
-import App from './App';
+import { Provider } from 'react-redux';
+
+import { store } from 'entities/store';
+import * as fakeServer from 'shared/fakeServer';
+import App from 'app';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <BrowserRouter>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+    <Provider store={store}>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </Provider>
   </BrowserRouter>
 );
+
+fakeServer.initFakeServer();
