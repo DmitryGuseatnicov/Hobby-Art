@@ -1,0 +1,15 @@
+.user-panel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  max-width: 500px;
+
+  &__item {
+    margin-top: 10px;
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 20px;
+    }
+  }
+}

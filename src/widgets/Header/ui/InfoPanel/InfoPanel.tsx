@@ -74,4 +74,4 @@ const InfoPanel = () => {
   );
 };
 
-export default InfoPanel;
+export { InfoPanel };

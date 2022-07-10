@@ -1,0 +1,45 @@
+@import 'shared/styles/var-and-mixin.scss';
+
+.nav-menu {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    margin-right: 20px;
+  }
+
+  &__item:last-child {
+    margin-right: 0;
+  }
+
+  &__link {
+    outline: none;
+    text-decoration: none;
+    color: $text_color;
+
+    @extend %menu_title;
+  }
+
+  &__link:hover,
+  &__link:focus-visible {
+    color: rgba($text_color, $alpha: 0.6);
+  }
+}
+
+@media screen  and (max-width: 1620px) {
+  .nav-menu {
+    &__item {
+      margin-top: 15px;
+    }
+  }
+}
+
+@media screen  and (max-width: 1530px) {
+  .nav-menu {
+    max-width: 400px;
+
+    &__item {
+      margin-top: 15px;
+    }
+  }
+}

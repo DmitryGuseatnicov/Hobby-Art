@@ -1,6 +1,10 @@
 import React from 'react';
 
-import InfoPanel from './InfoPanel/InfoPanel';
+import { Logo } from 'shared/ui';
+
+import { InfoPanel } from './InfoPanel/InfoPanel';
+import { NavMenu } from './NavMenu/NavMenu';
+import { UserPanel } from './UserPanel/UserPanel';
 import './Header.scss';
 
 const Header = () => {
@@ -11,9 +15,15 @@ const Header = () => {
       </div>
       <div className="container">
         <div className="header__menu">
-          <div className="header__menu-item">NavMenu</div>
-          <div className="header__menu-item">LOgo</div>
-          <div className="header__menu-item">UserPanel</div>
+          <div className="header__menu-item">
+            <NavMenu />
+          </div>
+          <div className="header__menu-item">
+            <Logo />
+          </div>
+          <div className="header__menu-item">
+            <UserPanel />
+          </div>
         </div>
       </div>
     </header>
