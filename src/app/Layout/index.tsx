@@ -4,8 +4,8 @@ import { Header } from 'widgets';
 
 const Layout = () => (
   <>
+    <Header />
     <div className="container">
-      <Header />
       <main className="main">
         <Outlet />
       </main>
