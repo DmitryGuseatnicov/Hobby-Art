@@ -1,6 +1,6 @@
 import { CartService, Product } from '../modals/cart';
 import { Category } from '../modals/category';
-import { IProduct, ProductService } from '../modals/product';
+import { IProduct, ISeachParamsOfProduct, ProductService } from '../modals/product';
 import { INewUser, IUser, UserService } from '../modals/user';
 
 const userService = new UserService();
@@ -35,7 +35,7 @@ const user = {
 };
 
 const product = {
-  get(params?: Partial<IProduct>) {
+  get(params?: Partial<IProduct | ISeachParamsOfProduct>) {
     if (params === undefined) {
       return productService.getAll();
     }

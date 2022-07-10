@@ -35,8 +35,8 @@ const paramsFilterMatcher = <T>(state: T[], data: Partial<T>) => {
   const stateFiltered = state.filter((pr) => {
     return !entries
       .reduce((prev: boolean[], next) => {
-        const [key, value] = next;
-        if (pr[key as keyof T] === value || contains(pr[key as keyof T] as any, value as any)) {
+        const [key, value] = next as [keyof T, any];
+        if (pr[key] === value || value.includes(pr[key]) || contains(pr[key] as any, value)) {
           prev.push(true);
           return prev;
         }

@@ -22,6 +22,23 @@ interface IProduct {
   tag: Array<tag>;
 }
 
+interface ISeachParamsOfProduct {
+  id: string[];
+  price: string[];
+  descriptions: string[];
+  type: string[];
+  sku: string[];
+  weight: string[];
+  length: string[];
+  brand: string[];
+  composition: string[];
+  country: string[];
+  colors: Array<string>;
+  likes: Array<string>;
+  category: string[];
+  tag: Array<tag>;
+}
+
 class Product {
   constructor() {
     if (storageWorker.get<IProduct>('product').length === 0) {
@@ -34,7 +51,7 @@ class Product {
     return { data: products };
   }
 
-  public getByParams(params: Partial<IProduct>) {
+  public getByParams(params: Partial<IProduct | ISeachParamsOfProduct>) {
     const products = storageWorker.get<IProduct>('product');
     const matchProducts = paramsFilterMatcher(products, params);
     return { data: matchProducts };
@@ -67,5 +84,5 @@ class Product {
   }
 }
 
-export type { IProduct };
+export type { IProduct, ISeachParamsOfProduct };
 export { Product as ProductService };
