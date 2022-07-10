@@ -1,0 +1,32 @@
+@import 'shared/styles/var-and-mixin.scss';
+
+.banner {
+  position: relative;
+  border-radius: 20px;
+  background: $green_gradient;
+
+  &__mask {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__bestseller {
+    position: absolute;
+    right: 10%;
+    top: 0;
+    width: 200px;
+    height: 200px;
+    transform: translateY(-40%);
+  }
+
+  &__bestseller-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
