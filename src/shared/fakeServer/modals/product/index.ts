@@ -46,19 +46,19 @@ class Product {
     }
   }
 
-  public getAll() {
-    const products = storageWorker.get<IProduct>('product');
+  public getAll<T extends IProduct>() {
+    const products = storageWorker.get<T>('product');
     return { data: products };
   }
 
-  public getByParams(params: Partial<IProduct | ISeachParamsOfProduct>) {
-    const products = storageWorker.get<IProduct>('product');
+  public getByParams<T extends IProduct>(params: Partial<IProduct | ISeachParamsOfProduct>) {
+    const products = storageWorker.get<T>('product');
     const matchProducts = paramsFilterMatcher(products, params);
     return { data: matchProducts };
   }
 
-  public toggleLike(userId: string, productId: string) {
-    const products = storageWorker.get<IProduct>('product');
+  public toggleLike<T extends IProduct>(userId: string, productId: string) {
+    const products = storageWorker.get<T>('product');
     const [triggerProduct] = products.filter((pr) => pr.id === productId);
 
     if (triggerProduct.likes.includes(userId)) {

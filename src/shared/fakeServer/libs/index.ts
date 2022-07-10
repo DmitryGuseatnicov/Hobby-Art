@@ -30,7 +30,7 @@ const contains = (where: string[] | number[], what: string[] | number[]) => {
   return true;
 };
 
-const paramsFilterMatcher = <T>(state: T[], data: Partial<T>) => {
+const paramsFilterMatcher = <T, R>(state: T[], data: Partial<R>) => {
   const entries = Object.entries(data);
   const stateFiltered = state.filter((pr) => {
     return !entries

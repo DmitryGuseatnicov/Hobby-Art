@@ -36,18 +36,22 @@ class User {
     }
   }
 
-  public getAll<T>() {
-    const users = storageWorker.get<T>('user');
-    return { data: users };
-  }
-
-  public getByParams<T>(params: Partial<IUser>) {
+  public getAll<T extends Partial<IUser>>() {
     const users = storageWorker.get<IUser>('user');
-    const matchUsers = paramsFilterMatcher(users, params);
-    return { data: matchUsers as unknown as T[] };
+    return { data: users as T[] };
   }
 
-  public create(user: INewUser) {
+  public getByParams<T extends Partial<IUser>>(params: Partial<IUser>) {
+    const users = storageWorker.get<IUser>('user');
+    const matchUsers = paramsFilterMatcher(users, params).map((user) => {
+      const { password, ...responseUser } = user;
+      return responseUser;
+    });
+
+    return { data: matchUsers as T[] };
+  }
+
+  public create<T extends Partial<IUser>>(user: INewUser) {
     const newUser: IUser = {
       ...user,
       id: uuid(),
@@ -62,17 +66,18 @@ class User {
     storageWorker.set('user', users);
     fakeServer.cart.post(newUser.id);
 
-    return { data: newUser };
+    const { password, ...responseUser } = newUser;
+    return { data: responseUser as T };
   }
 
-  public update(id: string, data: Partial<IUser>) {
+  public update<T extends Partial<IUser>>(id: string, data: Partial<IUser>) {
     const [user] = storageWorker.get<IUser>('user').filter((us) => us.id === id);
     const userUpdated = { ...user, ...data };
     const users = storageWorker
       .get<IUser>('user')
       .map((us) => (us.id === userUpdated.id ? userUpdated : us));
     storageWorker.set('user', users);
-    return { data: userUpdated };
+    return { data: userUpdated as T };
   }
 
   private init() {

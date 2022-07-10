@@ -1,0 +1,46 @@
+@import 'shared/styles/var-and-mixin.scss';
+
+.banner-slide {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 30px 0;
+
+  &__photo {
+    padding: 20px;
+    width: 50%;
+    height: 350px;
+  }
+
+  &__img {
+    display: inherit;
+    margin: 0 auto;
+    border-radius: 20px;
+    width: 50%;
+    height: 100%;
+    box-shadow: 2px 1px 20px -1px rgba(0, 0, 0, 0.5);
+    object-fit: cover;
+  }
+
+  &__info {
+    width: 100%;
+    max-width: 450px;
+  }
+
+  &__title {
+    color: $text_color;
+
+    @extend %title_big;
+  }
+
+  &__text {
+    margin-top: 48px;
+    color: $text_color_lite;
+  }
+
+  &__button-link {
+    display: inline-block;
+    margin-top: 40px;
+    width: 200px;
+  }
+}

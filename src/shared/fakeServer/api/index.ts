@@ -8,8 +8,10 @@ const productService = new ProductService();
 const cartService = new CartService();
 const categoryService = new Category();
 
+/** ****************** USER ******************* */
+
 const user = {
-  get<T>(params?: Partial<IUser>): Promise<{ data: T[] }> {
+  get<T extends Partial<IUser>>(params?: Partial<IUser>): Promise<{ data: T[] }> {
     return new Promise((resolve) => {
       setTimeout(() => {
         if (params === undefined) {
@@ -21,31 +23,49 @@ const user = {
     });
   },
 
-  post(params: INewUser) {
+  post<T extends IUser>(params: INewUser): Promise<{ data: T }> {
     return new Promise((resolve) => {
       setTimeout(() => {
-        resolve(userService.create(params));
+        resolve(userService.create<T>(params));
       }, 500);
     });
   },
 
-  put(id: string, params: Partial<IUser>) {
-    return userService.update(id, params);
+  put<T extends IUser>(id: string, params: Partial<IUser>): Promise<{ data: T }> {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(userService.update(id, params));
+      }, 500);
+    });
   }
 };
 
+/** ****************** PRODUCT ******************* */
+
+type ProductParams = Partial<IProduct | ISeachParamsOfProduct>;
 const product = {
-  get(params?: Partial<IProduct | ISeachParamsOfProduct>) {
-    if (params === undefined) {
-      return productService.getAll();
-    }
-    return productService.getByParams(params);
+  get<T extends IProduct>(params?: ProductParams): Promise<{ data: T[] }> {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        if (params === undefined) {
+          resolve(productService.getAll<T>());
+        } else {
+          resolve(productService.getByParams<T>(params));
+        }
+      }, 500);
+    });
   },
 
-  put(userId: string, productId: string) {
-    return productService.toggleLike(userId, productId);
+  put<T extends IProduct>(userId: string, productId: string): Promise<{ data: T }> {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(productService.toggleLike(userId, productId));
+      }, 500);
+    });
   }
 };
+
+/** ****************** Category ******************* */
 
 type CategoryCommand = 'filter' | 'info';
 const category = {
@@ -56,6 +76,8 @@ const category = {
     return categoryService.getAll();
   }
 };
+
+/** ****************** CART ******************* */
 
 type CartData = {
   userId: string;

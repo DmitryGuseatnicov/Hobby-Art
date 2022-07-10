@@ -1,0 +1,41 @@
+@import 'shared/styles/var-and-mixin.scss';
+
+.banner-carousel {
+  position: relative;
+  min-height:  500px;
+
+  &__buttons {
+    position: absolute;
+    right: 10%;
+    bottom: 40px;
+    display: flex;
+  }
+
+  &__button {
+    outline: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible {
+      opacity: 0.6;
+    }
+
+    &:first-child {
+      margin-right: 16px;
+    }
+
+    &:last-child {
+      margin-left: 16px;
+    }
+  }
+
+  &__slide-count {
+    width: 100%;
+    min-width: 40px;
+    font-size: 16px;
+    text-align: center;
+    color: $text_color;
+  }
+}
