@@ -1,10 +1,11 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+import { Header } from 'widgets';
 
 const Layout = () => (
   <>
-    <header />
     <div className="container">
+      <Header />
       <main className="main">
         <Outlet />
       </main>
