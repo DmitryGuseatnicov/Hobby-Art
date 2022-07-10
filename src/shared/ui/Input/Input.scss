@@ -1,0 +1,40 @@
+@import 'shared/styles/var-and-mixin.scss';
+
+.input {
+  position: relative;
+  width: 100%;
+
+  &__field {
+    outline: none;
+    border: 1px solid $text_color_transparent;
+    border-radius: 46px;
+    padding: 15.5px 32px;
+    width: 100%;
+    font-family: $Montserrat;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: $text_color_lite;
+
+    &::placeholder {
+      font-family: inherit;
+      font-weight: inherit;
+      font-size: inherit;
+      color: $text_color_transparent;
+    }
+
+    &:hover,
+    &:focus {
+      border: 1px solid $text_color;
+      color: $text_color;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+}

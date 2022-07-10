@@ -1,0 +1,158 @@
+@import 'shared/styles/var-and-mixin.scss';
+
+.button {
+  outline: none;
+  border: none;
+  border-radius: 46px;
+  padding: 1px;
+  width: 100%;
+  cursor: pointer;
+
+  &__icon {
+    width: 12px;
+    height: 12px;
+
+    &-svg {
+      fill: #976464;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 46px;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 100%;
+  }
+
+  &__text {
+    display: inline-block;
+    border-radius: 46px;
+  }
+
+  &_height-standard {
+    .button__text {
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+  }
+
+  &_height-short {
+    .button__text {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+
+  &_pink {
+    background: $pink_gradient;
+
+    .button__inner {
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    .button__text {
+      width: 100%;
+      font-family: $SpectralSC;
+      color: #FFF;
+
+      @extend %menu_title;
+    }
+
+    &:not(:active):focus-visible,
+    &:not(:active):hover {
+      background: $pink_gradient_hover;
+    }
+
+    &:active {
+      .button__text {
+        color: rgba(#976464, 0.8);
+        background: #FFF;
+      }
+    }
+  }
+
+  &_transparent {
+    background: $text_color_transparent;
+
+    .button__inner {
+      background: #FFF;
+    }
+
+    .button__text {
+      width: 100%;
+      font-family: $SpectralSC;
+      color: $text_color_transparent;
+      background: #FFF;
+
+      @extend %menu_title;
+    }
+
+    &:not(:active):focus-visible,
+    &:not(:active):hover {
+      background: $pink_gradient;
+
+      .button__text {
+        -webkit-text-fill-color: transparent;
+        background: $pink_gradient;
+        background-clip: text;
+      }
+    }
+
+    &:active {
+      .button__inner {
+        background: $pink_gradient;
+      }
+
+      .button__text {
+        color: #FFF;
+        background: transparent;
+      }
+    }
+  }
+
+  &_with-icon {
+    background: $text_color_transparent;
+
+    .button__inner {
+      background: #FFF;
+    }
+
+    .button__text {
+      margin-left: 8px;
+      font-family: $Montserrat;
+      font-size: 14px;
+      color: $text_color_transparent;
+    }
+
+    &:not(:active):hover,
+    &:not(:active):focus-visible {
+      background: $pink_gradient_hover;
+
+      .button__text {
+        -webkit-text-fill-color: transparent;
+        background: $pink_gradient_hover;
+        background-clip: text;
+      }
+    }
+
+    &:active {
+      .button__inner {
+        background: $pink_gradient;
+      }
+
+      .button__icon {
+        &-svg {
+          fill: #FFF;
+        }
+      }
+
+      .button__text {
+        color: #FFF;
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@import 'shared/styles/var-and-mixin.scss';
+
+.title {
+  color: $text_color;
+
+  &_big {
+    @extend %title_big;
+  }
+
+  &_medium-big {
+    @extend %title_medium;
+  }
+
+  &_medium {
+    @extend %title_medium;
+  }
+
+  &_small {
+    @extend %title_small;
+  }
+}
