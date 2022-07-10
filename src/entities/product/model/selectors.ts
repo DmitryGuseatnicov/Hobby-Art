@@ -1,6 +1,8 @@
 import { useTypedSelector } from 'entities/hooks';
 
-const useUser = () => useTypedSelector((state) => state.userReducer.user);
-const useAuth = () => useTypedSelector((state) => state.userReducer.isAuth);
+const useProduct = () => useTypedSelector((state) => state.productReducer.product);
+const useProducts = () => useTypedSelector((state) => state.productReducer.products);
+const useLoading = () => useTypedSelector((state) => state.productReducer.isLoading);
+const useError = () => useTypedSelector((state) => state.productReducer.error);
 
-export { useUser, useAuth };
+export { useProduct, useProducts, useLoading, useError };

@@ -1,42 +1,50 @@
-import { IUser, UserActions } from './types';
+import { IProduct, IProductState, ProductActions } from './types';
 
-const initialState = {
-  isAuth: false,
+const initialState: IProductState = {
   isLoading: false,
   error: '',
-  user: {} as IUser
+  product: {} as IProduct,
+  products: []
 };
 
 type State = typeof initialState;
 
 // eslint-disable-next-line default-param-last
-const userReducer = (state: State = initialState, action: UserActions): State => {
+const productReducer = (state: State = initialState, action: ProductActions): State => {
   switch (action.type) {
-    case 'SET_USER':
+    case 'SET_PRODUCT': {
       return {
         ...state,
-        user: { ...action.payload },
-        isAuth: true
-      };
-
-    case 'REMOVE_USER':
-      return {
-        ...state,
-        user: {} as IUser,
-        isAuth: false
-      };
-
-    case 'SET_USER_LOADING': {
-      return {
-        ...state,
-        isAuth: action.payload
+        product: action.payload
       };
     }
 
-    case 'SET_USER_ERROR': {
+    case 'SET_PRODUCTS': {
+      return {
+        ...state,
+        products: action.payload
+      };
+    }
+
+    case 'SET_UPDATED_PRODUCT': {
+      return {
+        ...state,
+        product: action.payload,
+        products: state.products.map((pr) => (pr.id === action.payload.id ? action.payload : pr))
+      };
+    }
+
+    case 'SET_PRODUCT_ERROR': {
       return {
         ...state,
         error: action.payload
+      };
+    }
+
+    case 'SET_PRODUCT_LOADING': {
+      return {
+        ...state,
+        isLoading: action.payload
       };
     }
 
@@ -45,4 +53,4 @@ const userReducer = (state: State = initialState, action: UserActions): State =>
   }
 };
 
-export { userReducer };
+export { productReducer };
