@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 
 import { store } from 'entities/store';
 import * as fakeServer from 'shared/fakeServer';
-import App from 'app';
+import App from 'app/App';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
