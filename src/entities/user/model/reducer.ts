@@ -2,6 +2,8 @@ import { IUser, UserActions } from './types';
 
 const initialState = {
   isAuth: false,
+  isLoading: false,
+  error: '',
   user: {} as IUser
 };
 
@@ -13,7 +15,7 @@ const userReducer = (state: State = initialState, action: UserActions): State =>
     case 'SET_USER':
       return {
         ...state,
-        user: { ...state, ...action.payload },
+        user: { ...action.payload },
         isAuth: true
       };
 

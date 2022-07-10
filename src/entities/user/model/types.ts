@@ -11,6 +11,13 @@ interface IUser {
   bonus: number;
 }
 
+interface IUserState {
+  isAuth: boolean;
+  isLoading: boolean;
+  error: string;
+  user: IUser;
+}
+
 interface ISetUser {
   type: 'SET_USER';
   payload: IUser;
@@ -20,6 +27,24 @@ interface IRemoveUser {
   type: 'REMOVE_USER';
 }
 
-type UserActions = ISetUser | IRemoveUser;
+interface ISetUserLoading {
+  type: 'SET_USER_LOADING';
+  payload: boolean;
+}
 
-export type { IUser, IRemoveUser, ISetUser, UserActions };
+interface ISetUserError {
+  type: 'SET_USER_ERROR';
+  payload: string;
+}
+
+type UserActions = ISetUser | IRemoveUser | ISetUserLoading | ISetUserError;
+
+export type {
+  IUser,
+  IRemoveUser,
+  ISetUser,
+  UserActions,
+  IUserState,
+  ISetUserLoading,
+  ISetUserError
+};
