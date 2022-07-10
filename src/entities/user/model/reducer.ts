@@ -26,6 +26,20 @@ const userReducer = (state: State = initialState, action: UserActions): State =>
         isAuth: false
       };
 
+    case 'SET_USER_LOADING': {
+      return {
+        ...state,
+        isAuth: action.payload
+      };
+    }
+
+    case 'SET_USER_ERROR': {
+      return {
+        ...state,
+        error: action.payload
+      };
+    }
+
     default:
       return state;
   }
