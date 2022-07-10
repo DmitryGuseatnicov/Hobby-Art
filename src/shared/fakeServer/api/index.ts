@@ -46,23 +46,27 @@ const product = {
 };
 
 type CartData = {
-  event: 'increment' | 'decrement' | 'clear';
+  userId: string;
+  // FIX-ME Product type
   product: Product;
 };
+
+type CartCommand = 'increment' | 'decrement' | 'clear';
 const cart = {
   post(userId: string) {
     cartService.create(userId);
   },
 
-  put(userId: string, cartData: CartData) {
-    if (cartData.event === 'increment') {
-      return cartService.add(userId, cartData.product);
+  // Fix-ME make distract of card Data
+  put(command: CartCommand, cartData: CartData) {
+    if (command === 'increment') {
+      return cartService.add(cartData.userId, cartData.product);
     }
-    if (cartData.event === 'decrement') {
-      return cartService.remove(userId, cartData.product);
+    if (command === 'decrement') {
+      return cartService.remove(cartData.userId, cartData.product);
     }
-    if (cartData.event === 'clear') {
-      return cartService.remove(userId, cartData.product);
+    if (command === 'clear') {
+      return cartService.remove(cartData.userId, cartData.product);
     }
     return undefined;
   }
