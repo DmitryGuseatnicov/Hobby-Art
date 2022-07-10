@@ -18,7 +18,7 @@
         "#388dcb",
         "#127d16"
       ],
-      "category": "categoryID1",
+      "category": "вязание",
       "img": "assest/proguct-img/ADELIA-RITA.jpeg",
       "likes": [
         "1",
@@ -47,7 +47,7 @@
         "#fedbe0",
         "#3b1a4d"
       ],
-      "category": "categoryID1",
+      "category": "вязание",
       "img": "assest/proguct-img/ADELIA-NAOMI.jpeg",
       "likes": [
         "1",
@@ -76,7 +76,7 @@
         "#e747ec",
         "#19aaab"
       ],
-      "category": "categoryID1",
+      "category": "вязание",
       "img": "assest/proguct-img/ADELIA-DOLLY-VELOUR.jpeg",
       "likes": [
         "1",
@@ -102,7 +102,7 @@
         "#cc87ac",
         "#8fdaca"
       ],
-      "category": "categoryID1",
+      "category": "вязание",
       "img": "assest/proguct-img/ADELIA-DOLLY-VELOUR.jpeg",
       "likes": [
         "1",
@@ -130,7 +130,7 @@
         "#44b610",
         "#ebe7b0"
       ],
-      "category": "categoryID1",
+      "category": "вязание",
       "img": "assest/proguct-img/ALPINA-LENA.jpeg",
       "likes": [
         "1",
@@ -158,7 +158,7 @@
         "#659aab",
         "#1a4bef"
       ],
-      "category": "categoryID1",
+      "category": "вязание",
       "img": "assest/proguct-img/ALPINA-VIVEN.jpeg",
       "likes": [
         "1",
@@ -186,7 +186,7 @@
         "#3cba3f",
         "#4f76fe"
       ],
-      "category": "categoryID1",
+      "category": "вязание",
       "img": "assest/proguct-img/ALPINA-MARGO.jpeg",
       "likes": [
         "1",
@@ -215,7 +215,7 @@
         "#c7fdf7",
         "#2322dc"
       ],
-      "category": "categoryID1",
+      "category": "вязание",
       "img": "assest/proguct-img/ARACHNA-CORD-CLASSIC\".jpeg",
       "likes": [
         "1",
@@ -243,7 +243,7 @@
         "#c23bfe",
         "#cc9f6a"
       ],
-      "category": "categoryID1",
+      "category": "вязание",
       "img": "assest/proguct-img/ARACHNA-PANDA.jpeg",
       "likes": [
         "1",
@@ -269,7 +269,7 @@
         "#8d4f3b",
         "#cecaaa"
       ],
-      "category": "categoryID2",
+      "category": "вышивка",
       "img": "assest/proguct-img/Gamma-V150:2.jpeg",
       "likes": [
         "1",
@@ -296,7 +296,7 @@
         "#9b5d7b",
         "#acc79b"
       ],
-      "category": "categoryID2",
+      "category": "вышивка",
       "img": "assest/proguct-img/Gamma-V75:2.jpeg",
       "likes": [
         "1",
@@ -320,7 +320,7 @@
         "#b08d34",
         "#7493da"
       ],
-      "category": "categoryID2",
+      "category": "вышивка",
       "img": "assest/proguct-img/Gamma-V75:2.jpeg",
       "likes": [
         "1",
@@ -346,7 +346,7 @@
         "#fcc19f",
         "#7adbfb"
       ],
-      "category": "categoryID2",
+      "category": "вышивка",
       "img": "assest/proguct-img/SumikoThread-JST2.jpeg",
       "likes": [
         "1",
@@ -372,7 +372,7 @@
         "#07da9d",
         "#57ae18"
       ],
-      "category": "categoryID2",
+      "category": "вышивка",
       "img": "assest/proguct-img/SumikoThread-JST1.jpeg",
       "likes": [
         "1",
@@ -396,7 +396,7 @@
         "#d86d49",
         "#26bd2a"
       ],
-      "category": "categoryID2",
+      "category": "вышивка",
       "img": "assest/proguct-img/PNK-Kirova.jpeg",
       "likes": [
         "1",
@@ -428,7 +428,7 @@
         "#27d6c8",
         "#5892d3"
       ],
-      "category": "categoryID3",
+      "category": "лепка",
       "img": "assest/proguct-img/Hobbius-ЛЗЧ.jpeg",
       "likes": [
         "1",
@@ -457,7 +457,7 @@
         "#bbf01d",
         "#79a20f"
       ],
-      "category": "categoryID3",
+      "category": "лепка",
       "img": "assest/proguct-img/Hobbius-SPX.jpeg",
       "likes": [
         "1",
@@ -488,7 +488,7 @@
         "#bfcb25",
         "#54aa7c"
       ],
-      "category": "categoryID3",
+      "category": "лепка",
       "img": "assest/proguct-img/VISTA-ARTISTA-VSSP-500.jpeg",
       "likes": [
         "1",
@@ -517,7 +517,7 @@
         "#9f87e9",
         "#45d3fe"
       ],
-      "category": "categoryID3",
+      "category": "лепка",
       "img": "assest/proguct-img/VISTA-ARTISTA-VSSP-1000.jpeg",
       "likes": [
         "1",
@@ -546,7 +546,7 @@
         "#2b8bcb",
         "#fe150c"
       ],
-      "category": "categoryID3",
+      "category": "лепка",
       "img": "assest/proguct-img/Akva-color-IZO-SP-240.jpeg",
       "likes": [
         "1",
@@ -577,7 +577,7 @@
         "#f5c71c",
         "#ebddcb"
       ],
-      "category": "categoryID3",
+      "category": "лепка",
       "img": "assest/proguct-img/Гигантозавр-GGZ-LMCW0112.jpeg",
       "likes": [
         "1",
@@ -602,7 +602,7 @@
         "#10eb7f",
         "#f85d2e"
       ],
-      "category": "categoryID3",
+      "category": "лепка",
       "img": "assest/proguct-img/Гигантозавр-GGZ-LMC0106.jpeg",
       "likes": [
         "1",
@@ -627,7 +627,7 @@
         "#46d962",
         "#b80ceb"
       ],
-      "category": "categoryID3",
+      "category": "лепка",
       "img": "assest/proguct-img/Гигантозавр-GGZ-LMСW0106.jpeg",
       "likes": [
         "1",
@@ -652,7 +652,7 @@
         "#6d41ae",
         "#ed2ffb"
       ],
-      "category": "categoryID3",
+      "category": "лепка",
       "img": "assest/proguct-img/Лео-LMC-0116.jpeg",
       "likes": [
         "1",
@@ -687,7 +687,7 @@
         "#e7a9d8",
         "#cbbeba"
       ],
-      "category": "categoryID3",
+      "category": "лепка",
       "img": "assest/proguct-img/Лео-LMC-0116-1.jpeg",
       "likes": [
         "1",
@@ -714,7 +714,7 @@
         "#0a0eee",
         "#f67a60"
       ],
-      "category": "categoryID3",
+      "category": "лепка",
       "img": "assest/proguct-img/Лео-LMCW-0106.jpeg",
       "likes": [
         "1",
@@ -740,7 +740,7 @@
         "#9a16fb",
         "#c21307"
       ],
-      "category": "categoryID3",
+      "category": "лепка",
       "img": "assest/proguct-img/Лео-Пластилин легкий.jpeg",
       "likes": [
         "1",
@@ -795,7 +795,7 @@
         "#e0eb37",
         "#78ee93"
       ],
-      "category": "categoryID3",
+      "category": "лепка",
       "img": "assest/proguct-img/Лео-LPMC-0136.jpeg",
       "likes": [
         "1",
@@ -826,7 +826,7 @@
         "#25b50f",
         "#12bde6"
       ],
-      "category": "categoryID3",
+      "category": "лепка",
       "img": "assest/proguct-img/Лео-LPMC-0110 .jpeg",
       "likes": [
         "1",
@@ -855,7 +855,7 @@
         "#24f52c",
         "#5a7fc3"
       ],
-      "category": "categoryID3",
+      "category": "лепка",
       "img": "assest/proguct-img/Лео-LPMCR-0108.jpeg",
       "likes": [
         "1",
@@ -888,7 +888,7 @@
         "#f83464",
         "#9b2b43"
       ],
-      "category": "categoryID3",
+      "category": "лепка",
       "img": "assest/proguct-img/Мишка-MMC-0112.jpeg",
       "likes": [
         "1",
@@ -915,7 +915,7 @@
         "#5cc7f8",
         "#4ff234"
       ],
-      "category": "categoryID3",
+      "category": "лепка",
       "img": "assest/proguct-img/Мишка-MMC-0106 .jpeg",
       "likes": [
         "1",
@@ -940,7 +940,7 @@
         "#155f36",
         "#21987d"
       ],
-      "category": "categoryID3",
+      "category": "лепка",
       "img": "assest/proguct-img/Царевны-TSR-LMC0106.jpeg",
       "likes": [
         "1",

@@ -1,10 +1,12 @@
 import { CartService, Product } from '../modals/cart';
+import { Category } from '../modals/category';
 import { IProduct, ProductService } from '../modals/product';
 import { INewUser, IUser, UserService } from '../modals/user';
 
 const userService = new UserService();
 const productService = new ProductService();
 const cartService = new CartService();
+const categoryService = new Category();
 
 const user = {
   get<T>(params?: Partial<IUser>): Promise<{ data: T[] }> {
@@ -45,6 +47,16 @@ const product = {
   }
 };
 
+type CategoryCommand = 'filter' | 'info';
+const category = {
+  get(command: CategoryCommand, categoryName: string) {
+    if (command === 'filter') {
+      return categoryService.getFilterParams(categoryName);
+    }
+    return categoryService.getAll();
+  }
+};
+
 type CartData = {
   userId: string;
   // FIX-ME Product type
@@ -76,8 +88,9 @@ const initFakeServer = () => {
   return {
     userService,
     productService,
+    categoryService,
     cartService
   };
 };
 
-export { initFakeServer, user, product, cart };
+export { initFakeServer, user, product, cart, category };
