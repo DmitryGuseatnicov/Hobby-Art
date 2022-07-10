@@ -19,7 +19,6 @@ interface IButton {
 
 const Button: FC<IButton> = (props) => {
   const { modification, height, children, onClick, link, icon = '', isSubmit = '' } = props;
-
   const variantModifiers = {
     'with-icon': 'button_with-icon',
     pink: 'button_pink',
@@ -58,7 +57,7 @@ const Button: FC<IButton> = (props) => {
     }
     return (
       <button type={isSubmit ? 'submit' : 'button'} className={classes} onClick={onClick}>
-        {children}
+        {elementWithIcon}
       </button>
     );
   }
