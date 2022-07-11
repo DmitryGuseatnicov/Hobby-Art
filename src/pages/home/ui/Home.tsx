@@ -5,6 +5,7 @@ import * as fakeServer from 'shared/fakeServer';
 
 import { Banner } from './Banner/Banner';
 import './Home.scss';
+import { ProductSwitcher } from './ProductSwitcher/ProductSwitcher';
 
 interface IProductsByTag {
   top: productModel.IProduct[];
@@ -38,6 +39,9 @@ const Home = () => {
     <div className="home">
       <div className="home__banner">
         <Banner products={products.top} />
+      </div>
+      <div className="home__product-switcher">
+        <ProductSwitcher newProducts={products.new} popularProducts={products.popular} />
       </div>
     </div>
   );

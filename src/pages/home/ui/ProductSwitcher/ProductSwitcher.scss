@@ -1,0 +1,49 @@
+@import 'shared/styles/var-and-mixin.scss';
+
+.product-switch {
+  &__panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 518px;
+  }
+
+  &__label {
+    border: none;
+    text-transform: uppercase;
+    color: $text_color_lite;
+    cursor: pointer;
+
+    &_checked {
+      @extend %pink_gradient_text;
+    }
+
+    @extend %title_big;
+  }
+
+  &__toggle {
+    display: flex;
+    border-radius: 65px;
+    width: 72px;
+    height: 34px;
+    background: #E9E9E9;
+
+    &_checked {
+      justify-content: flex-end;
+    }
+  }
+
+  &__handle {
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    background: $pink_gradient;
+  }
+
+  &__carousel {
+    margin-top: 80px;
+    padding: 0 20px;
+  }
+}
