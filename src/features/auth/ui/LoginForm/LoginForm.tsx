@@ -7,17 +7,17 @@ import { Button, Icon, Input, Title } from 'shared/ui';
 import { login } from '../../actions';
 import './LoginForm.scss';
 
-type ModalHandler = {
+type ModalController = {
   close: () => void;
   openRegister: () => void;
 };
 
 interface ILoginForm {
-  modalHandler: ModalHandler;
+  modalController: ModalController;
 }
 
 const LoginForm: FC<ILoginForm> = (props) => {
-  const { modalHandler } = props;
+  const { modalController } = props;
 
   const [data, setData] = useState({
     phone: '',
@@ -36,7 +36,7 @@ const LoginForm: FC<ILoginForm> = (props) => {
 
   return (
     <form className="login-form" onSubmit={formHandler}>
-      <button type="button" className="login-form__close" onClick={modalHandler.close}>
+      <button type="button" className="login-form__close" onClick={modalController.close}>
         <Icon type="close" />
       </button>
       <div className="login-form__title">
@@ -73,7 +73,10 @@ const LoginForm: FC<ILoginForm> = (props) => {
         </div>
         <div className="login-form__question">Вы еще не зарегистрированы?</div>
         <div className="login-form__register-button">
-          <Button modification="transparent" height="standard" onClick={modalHandler.openRegister}>
+          <Button
+            modification="transparent"
+            height="standard"
+            onClick={modalController.openRegister}>
             регистрация
           </Button>
         </div>

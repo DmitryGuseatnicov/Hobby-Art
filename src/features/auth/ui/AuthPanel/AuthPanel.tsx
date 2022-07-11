@@ -27,7 +27,7 @@ const AuthPanel: FC = () => {
     setModals({ login: false, register: false });
   };
 
-  const modalHandler = {
+  const modalController = {
     openLogin,
     openRegister,
     close
@@ -46,13 +46,13 @@ const AuthPanel: FC = () => {
           modification="with-icon"
           height="short"
           icon="entry"
-          onClick={modalHandler.openLogin}>
+          onClick={modalController.openLogin}>
           Войти
         </Button>
       )}
       <Popup isVisible={!!(modals.login || modals.register)}>
-        {(modals.login && <LoginForm modalHandler={modalHandler} />) ||
-          (modals.register && <RegisterForm modalHandler={modalHandler} />)}
+        {(modals.login && <LoginForm modalController={modalController} />) ||
+          (modals.register && <RegisterForm modalController={modalController} />)}
       </Popup>
     </>
   );
