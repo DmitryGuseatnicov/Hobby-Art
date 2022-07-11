@@ -1,0 +1,28 @@
+.carousel {
+  position: relative;
+
+  &__slide {
+    padding: 0 5px;
+  }
+
+  &__button {
+    position: absolute;
+    top: 50%;
+    z-index: 100;
+    outline: none;
+    border: none;
+    background: transparent;
+    transform: translate(-20px, 50%);
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible {
+      opacity: 0.6;
+    }
+
+    &:last-child {
+      right: 0;
+      transform: translate(20px, 50%);
+    }
+  }
+}
