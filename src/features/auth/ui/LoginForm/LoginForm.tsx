@@ -25,8 +25,7 @@ const LoginForm: FC<ILoginForm> = (props) => {
   });
 
   const inputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.name === 'phone') setData({ ...data, phone: e.target.value });
-    if (e.target.name === 'password') setData({ ...data, password: e.target.value });
+    setData({ ...data, [e.target.name]: e.target.value });
   };
   const dispatch = useDispatch<AsyncDispatch>();
   const formHandler = (e: React.FormEvent) => {
