@@ -30,7 +30,7 @@ const App = () => {
         <Route path="/delivery-info" element={<DeliveryInfo />} />
         <Route path="/bonus-program" element={<BonusProgram />} />
         <Route path="/refund" element={<Refund />} />
-        {isAuth && <Route path="/personal-aria" element={<PersonalArea />} />}
+        {isAuth && <Route path="/personal-area" element={<PersonalArea />} />}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>
