@@ -1,7 +1,10 @@
-import React, { FC } from 'react';
+import { AsyncDispatch } from 'entities/store';
+import React, { FC, useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 import { Button, Icon, Input, Title } from 'shared/ui';
 
+import { login } from '../../actions';
 import './LoginForm.scss';
 
 type ModalHandler = {
@@ -16,8 +19,23 @@ interface ILoginForm {
 const LoginForm: FC<ILoginForm> = (props) => {
   const { modalHandler } = props;
 
+  const [data, setData] = useState({
+    phone: '',
+    password: ''
+  });
+
+  const inputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.name === 'phone') setData({ ...data, phone: e.target.value });
+    if (e.target.name === 'password') setData({ ...data, password: e.target.value });
+  };
+  const dispatch = useDispatch<AsyncDispatch>();
+  const formHandler = (e: React.FormEvent) => {
+    e.preventDefault();
+    dispatch(login(data));
+  };
+
   return (
-    <form className="login-form">
+    <form className="login-form" onSubmit={formHandler}>
       <button type="button" className="login-form__close" onClick={modalHandler.close}>
         <Icon type="close" />
       </button>
@@ -28,10 +46,22 @@ const LoginForm: FC<ILoginForm> = (props) => {
       </div>
       <div className="login-form__container">
         <div className="login-form__input">
-          <Input type="text" placeholder="Номер телефона" value="" name="login" />
+          <Input
+            type="text"
+            placeholder="Номер телефона"
+            name="phone"
+            value={data.phone}
+            onChange={inputHandler}
+          />
         </div>
         <div className="login-form__input">
-          <Input type="password" placeholder="Пароль" value="" name="password" />
+          <Input
+            type="password"
+            placeholder="Пароль"
+            name="password"
+            value={data.password}
+            onChange={inputHandler}
+          />
         </div>
         <div className="login-form__login-block">
           <div className="login-form__login-button">

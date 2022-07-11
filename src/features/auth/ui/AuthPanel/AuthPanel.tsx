@@ -33,6 +33,8 @@ const AuthPanel: FC = () => {
     close
   };
 
+  if (isAuth && (modals.login || modals.register)) close();
+
   return (
     <>
       {isAuth ? (
