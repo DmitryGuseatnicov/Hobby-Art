@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import { Button, Icon, Input, Title } from 'shared/ui';
 import './RegisterForm.scss';
 
-const RegisterForm = () => {
+type ModalHandler = {
+  close: () => void;
+  openLogin: () => void;
+};
+
+interface IRegisterForm {
+  modalHandler: ModalHandler;
+}
+
+const RegisterForm: FC<IRegisterForm> = (props) => {
+  const { modalHandler } = props;
+
   return (
     <form className="register-form">
-      <button type="button" className="register-form__close">
+      <button type="button" className="register-form__close" onClick={modalHandler.close}>
         <Icon type="close" />
       </button>
       <div className="register-form__title">
@@ -45,7 +56,7 @@ const RegisterForm = () => {
         <div className="register-form__login-block">
           <div className="register-form__question">Есть аккаунт? </div>
           <div className="register-form__login-button">
-            <Button modification="transparent" height="standard">
+            <Button modification="transparent" height="standard" onClick={modalHandler.openLogin}>
               войти
             </Button>
           </div>
