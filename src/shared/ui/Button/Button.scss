@@ -33,6 +33,7 @@
     display: inline-block;
     width: fit-content;
     border-radius: 46px;
+    line-height: normal;
   }
 
   &_height-standard {
@@ -82,6 +83,7 @@
     background: $text_color_transparent;
 
     .button__inner {
+      
       background: #fff;
     }
 
