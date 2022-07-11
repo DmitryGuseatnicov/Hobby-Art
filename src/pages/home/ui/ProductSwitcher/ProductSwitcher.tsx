@@ -73,12 +73,12 @@ const ProductSwitcher: FC<IProductSwitcher> = (props) => {
             checked === 'new'
               ? newProducts.map((pr) => ({
                   img: pr.img,
-                  link: `/product${pr.id}`,
+                  link: `/product/${pr.id}`,
                   name: `${pr.brand} ${pr.sku}`
                 }))
               : popularProducts.map((pr) => ({
                   img: pr.img,
-                  link: `/product${pr.id}`,
+                  link: `/product/${pr.id}`,
                   name: `${pr.brand} ${pr.sku}`
                 }))
           }
