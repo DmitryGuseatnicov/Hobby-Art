@@ -1,0 +1,64 @@
+@import '../../../../app/assets/styles/vars-mixin.scss';
+
+.login-form {
+  position: relative;
+  border-radius: 20px;
+  padding: 80px 20px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 0 30px rgba(68, 68, 68, 0.2);
+  background: #FFF;
+
+  &__close {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    border: none;
+    background: inherit;
+    cursor: pointer;
+  }
+
+  &__title {
+    margin: 0 auto;
+    max-width: 385px;
+  }
+
+  &__container {
+    margin: 0 auto;
+    max-width: 385px;
+  }
+
+  &__input {
+    margin-top: 24px;
+
+    &:first-child {
+      margin-top: 40px;
+    }
+  }
+
+  &__login-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid $text_color_transparent;
+    padding: 40px 0;
+  }
+
+  &__login-button {
+    width: 150px;
+  }
+
+  &__restore-password {
+    margin-left: 24px;
+  }
+
+  &__question {
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  &__register-button {
+    margin: 24px auto 0;
+    max-width: 215px;
+  }
+}
