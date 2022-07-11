@@ -2,7 +2,7 @@
 
 .banner-carousel {
   position: relative;
-  min-height:  500px;
+  min-height: 500px;
 
   &__buttons {
     position: absolute;
@@ -12,9 +12,9 @@
   }
 
   &__button {
-    outline: none;
-    border: none;
     background: transparent;
+    border: none;
+    outline: none;
     cursor: pointer;
 
     &:hover,
@@ -34,8 +34,8 @@
   &__slide-count {
     width: 100%;
     min-width: 40px;
+    color: $text_color;
     font-size: 16px;
     text-align: center;
-    color: $text_color;
   }
 }

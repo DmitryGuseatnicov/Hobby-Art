@@ -2,12 +2,12 @@
 
 .button {
   display: block;
+  width: 100%;
+  padding: 1px;
   text-decoration: none;
-  outline: none;
   border: none;
   border-radius: 46px;
-  padding: 1px;
-  width: 100%;
+  outline: none;
   cursor: pointer;
 
   &__icon {
@@ -23,10 +23,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 46px;
+    width: 100%;
     padding-right: 15px;
     padding-left: 15px;
-    width: 100%;
+    border-radius: 46px;
   }
 
   &__text {
@@ -58,9 +58,9 @@
     }
 
     .button__text {
-      //width: 100%;
+      color: #fff;
       font-family: $SpectralSC;
-      color: #FFF;
+      //width: 100%;
 
       @extend %menu_title;
     }
@@ -73,7 +73,7 @@
     &:active {
       .button__text {
         color: rgba(#976464, 0.8);
-        background: #FFF;
+        background: #fff;
       }
     }
   }
@@ -82,14 +82,14 @@
     background: $text_color_transparent;
 
     .button__inner {
-      background: #FFF;
+      background: #fff;
     }
 
     .button__text {
-      //width: 100%;
-      font-family: $SpectralSC;
       color: $text_color_transparent;
-      background: #FFF;
+      font-family: $SpectralSC;
+      background: #fff;
+      //width: 100%;
 
       @extend %menu_title;
     }
@@ -99,9 +99,9 @@
       background: $pink_gradient;
 
       .button__text {
-        -webkit-text-fill-color: transparent;
         background: $pink_gradient;
         background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
     }
 
@@ -111,7 +111,7 @@
       }
 
       .button__text {
-        color: #FFF;
+        color: #fff;
         background: transparent;
       }
     }
@@ -121,14 +121,14 @@
     background: $text_color_transparent;
 
     .button__inner {
-      background: #FFF;
+      background: #fff;
     }
 
     .button__text {
       margin-left: 8px;
-      font-family: $Montserrat;
-      font-size: 14px;
       color: $text_color_transparent;
+      font-size: 14px;
+      font-family: $Montserrat;
     }
 
     &:not(:active):hover,
@@ -136,9 +136,9 @@
       background: $pink_gradient_hover;
 
       .button__text {
-        -webkit-text-fill-color: transparent;
         background: $pink_gradient_hover;
         background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
     }
 
@@ -149,12 +149,12 @@
 
       .button__icon {
         &-svg {
-          fill: #FFF;
+          fill: #fff;
         }
       }
 
       .button__text {
-        color: #FFF;
+        color: #fff;
       }
     }
   }

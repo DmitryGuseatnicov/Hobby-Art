@@ -11,16 +11,16 @@
   }
 
   &__contacts-inner {
-    list-style: none;
     margin-top: 50px;
+    list-style: none;
   }
 
   &__contacts-item {
     display: flex;
     align-items: center;
     margin-top: 20px;
-    font-size: 16px;
     color: $text_color;
+    font-size: 16px;
   }
 
   &__contacts-icon {
@@ -34,9 +34,9 @@
   }
 
   &__contacts-link {
+    color: $text_color;
     font-size: inherit;
     text-decoration: none;
-    color: $text_color;
   }
 
   &__widget {
@@ -69,27 +69,27 @@
 
   &__subscribe-button {
     position: absolute;
-    right: 0;
     top: 0;
+    right: 0;
     width: 50%;
   }
 
   &__subscribe-description {
     margin-top: 8px;
+    color: $text_color_lite;
     font-size: 12px;
     line-height: 17px;
-    color: $text_color_lite;
   }
 
   &__copy-right {
     margin-top: 40px;
+    color: $text_color_lite;
     font-size: 16px;
     line-height: 22px;
-    color: $text_color_lite;
   }
 }
 
-@media screen  and (max-width: 1440px) {
+@media screen and (max-width: 1440px) {
   .footer {
     &__inner {
       flex-wrap: wrap;

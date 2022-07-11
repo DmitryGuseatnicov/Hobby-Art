@@ -13,9 +13,9 @@
   }
 
   &__link {
-    outline: none;
-    text-decoration: none;
     color: $text_color;
+    text-decoration: none;
+    outline: none;
 
     @extend %menu_title;
   }
@@ -26,7 +26,7 @@
   }
 }
 
-@media screen  and (max-width: 1620px) {
+@media screen and (max-width: 1620px) {
   .nav-menu {
     &__item {
       margin-top: 15px;
@@ -34,7 +34,7 @@
   }
 }
 
-@media screen  and (max-width: 1530px) {
+@media screen and (max-width: 1530px) {
   .nav-menu {
     max-width: 400px;
 

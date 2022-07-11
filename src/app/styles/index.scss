@@ -1,11 +1,10 @@
-
 @import 'app/styles/fonts.scss';
 @import 'app/styles/reset.scss';
 @import 'shared/styles/var-and-mixin.scss';
 
 html {
   color: $text_color;
-  background: #FAF9F9;
+  background: #faf9f9;
 
   @extend %body_text-big;
 }

@@ -5,35 +5,35 @@
   width: 100%;
 
   &__field {
-    outline: none;
-    border: 1px solid $text_color_transparent;
-    border-radius: 46px;
-    padding: 15.5px 32px;
     width: 100%;
-    font-family: $Montserrat;
+    padding: 15.5px 32px;
+    color: $text_color_lite;
     font-weight: 300;
     font-size: 14px;
+    font-family: $Montserrat;
     line-height: 17px;
-    color: $text_color_lite;
+    border: 1px solid $text_color_transparent;
+    border-radius: 46px;
+    outline: none;
 
     &::placeholder {
-      font-family: inherit;
+      color: $text_color_transparent;
       font-weight: inherit;
       font-size: inherit;
-      color: $text_color_transparent;
+      font-family: inherit;
     }
 
     &:hover,
     &:focus {
-      border: 1px solid $text_color;
       color: $text_color;
+      border: 1px solid $text_color;
     }
   }
 
   &__icon {
     position: absolute;
-    right: 20px;
     top: 50%;
+    right: 20px;
     transform: translateY(-50%);
     cursor: pointer;
   }

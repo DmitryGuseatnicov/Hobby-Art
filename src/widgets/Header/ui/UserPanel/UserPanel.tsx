@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Input } from 'shared/ui';
+import { Button, Input, Popup } from 'shared/ui';
 
 import './UserPanel.scss';
 
@@ -24,6 +24,9 @@ const UserPanel = () => {
           Корзна
         </Button>
       </div>
+      <Popup>
+        <div>qwewewewq</div>
+      </Popup>
     </div>
   );
 };

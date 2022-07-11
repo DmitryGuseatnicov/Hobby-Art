@@ -5,15 +5,15 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 0 auto;
     width: 100%;
     max-width: 518px;
+    margin: 0 auto;
   }
 
   &__label {
-    border: none;
-    text-transform: uppercase;
     color: $text_color_lite;
+    text-transform: uppercase;
+    border: none;
     cursor: pointer;
 
     &_checked {
@@ -25,10 +25,10 @@
 
   &__toggle {
     display: flex;
-    border-radius: 65px;
     width: 72px;
     height: 34px;
-    background: #E9E9E9;
+    background: #e9e9e9;
+    border-radius: 65px;
 
     &_checked {
       justify-content: flex-end;
@@ -36,10 +36,10 @@
   }
 
   &__handle {
-    border-radius: 50%;
     width: 34px;
     height: 34px;
     background: $pink_gradient;
+    border-radius: 50%;
   }
 
   &__carousel {

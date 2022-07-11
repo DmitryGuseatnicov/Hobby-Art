@@ -5,3 +5,4 @@ export { Input } from './Input/Input';
 export { Title } from './Title/Title';
 export { BannerCarousel } from './BannerCarousel/BannerCarousel';
 export { Carousel } from './Carousel/Carousel';
+export { Popup } from './Popup/Popup';
