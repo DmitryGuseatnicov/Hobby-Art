@@ -1,0 +1,103 @@
+@import 'shared/styles/var-and-mixin.scss';
+
+.footer {
+  margin-top: 60px;
+  padding: 64px 0;
+  background: $green_gradient;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__contacts-inner {
+    list-style: none;
+    margin-top: 50px;
+  }
+
+  &__contacts-item {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 16px;
+    color: $text_color;
+  }
+
+  &__contacts-icon {
+    display: flex;
+    align-items: center;
+    width: 20px;
+  }
+
+  &__contacts-info {
+    margin-left: 13px;
+  }
+
+  &__contacts-link {
+    font-size: inherit;
+    text-decoration: none;
+    color: $text_color;
+  }
+
+  &__widget {
+    list-style: none;
+  }
+
+  &__widget-item {
+    margin-top: 38px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__special {
+    width: 100%;
+    max-width: 460px;
+  }
+
+  &__subscribe-form {
+    position: relative;
+    margin-top: 30px;
+  }
+
+  &__subscribe-input {
+    .input__field {
+      padding-right: 52%;
+    }
+  }
+
+  &__subscribe-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+  }
+
+  &__subscribe-description {
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 17px;
+    color: $text_color_lite;
+  }
+
+  &__copy-right {
+    margin-top: 40px;
+    font-size: 16px;
+    line-height: 22px;
+    color: $text_color_lite;
+  }
+}
+
+@media screen  and (max-width: 1440px) {
+  .footer {
+    &__inner {
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+
+    &__widget {
+      display: none;
+    }
+  }
+}
