@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { userModel } from 'entities/user';
-import { Icon, Title } from 'shared/ui';
+import { Avatar, Icon, Title } from 'shared/ui';
 import './ProfileSidebar.scss';
 
 type TabsIndicator = {
@@ -34,7 +34,7 @@ const ProfileSidebar: FC<IProfileSidebar> = (props) => {
     <div className="profile-sidebar">
       <div className="profile-sidebar__info">
         <div className="profile-sidebar__avatar">
-          <img className="profile-sidebar__avatar-img" src={avatar} alt="avatar" />
+          <Avatar img={avatar} />
         </div>
         <div className="profile-sidebar__name">
           <Title level={4} size="medium">{`${name} ${lastName}`}</Title>

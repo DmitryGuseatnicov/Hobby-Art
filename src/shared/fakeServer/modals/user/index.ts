@@ -27,8 +27,6 @@ interface INewUser {
   phone: string;
 }
 
-storageWorker.clear();
-
 class User {
   constructor() {
     if (storageWorker.get('user').length === 0) {

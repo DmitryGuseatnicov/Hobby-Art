@@ -1,8 +1,8 @@
-@import 'shared/styles/var-and-mixin.scss';
+@import 'shared/styles/var-and-mixin';
 
 .profile-bonuses {
   &_text-marked {
-    font-weight: bold;
     color: $pink;
+    font-weight: bold;
   }
 }
