@@ -1,3 +1,5 @@
+@import 'shared/styles/var-and-mixin';
+
 .personal-profile {
   &__widget {
     display: flex;
@@ -7,5 +9,17 @@
     background: #FFFFFF;
     box-shadow: 0px 0px 30px rgba(68, 68, 68, 0.05);
     border-radius: 20px;
+  }
+
+  &__sidebar {
+    width: 300px;
+    padding-right: 30px;
+    border-right: 1px solid $text_color_transparent;
+  }
+
+  &__content {
+    flex-grow: 1;
+    padding-top: 32px;
+    padding-left: 30px;
   }
 }
