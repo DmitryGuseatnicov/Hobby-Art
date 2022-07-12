@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
+import { CatalogNav } from 'features/catalog';
 import { productModel } from 'entities/product';
 import * as fakeServer from 'shared/fakeServer';
 
+import { ProductSwitcher } from './ProductSwitcher/ProductSwitcher';
 import { Banner } from './Banner/Banner';
 import './Home.scss';
-import { ProductSwitcher } from './ProductSwitcher/ProductSwitcher';
 
 interface IProductsByTag {
   top: productModel.IProduct[];
@@ -35,6 +36,7 @@ const Home = () => {
   useEffect(() => {
     getProducts();
   }, []);
+
   return (
     <div className="home">
       <div className="home__banner">
@@ -42,6 +44,9 @@ const Home = () => {
       </div>
       <div className="home__product-switcher">
         <ProductSwitcher newProducts={products.new} popularProducts={products.popular} />
+      </div>
+      <div className="home__catalog">
+        <CatalogNav />
       </div>
     </div>
   );

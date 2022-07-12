@@ -1,0 +1,16 @@
+.catalog-nav {
+  &__title {
+    margin: 0 auto;
+    width: fit-content;
+  }
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(4, 0.8fr);
+    column-gap: 30px;
+    margin-top: 60px;
+  }
+
+  &__item {
+    max-width: 300px;
+  }
+}
