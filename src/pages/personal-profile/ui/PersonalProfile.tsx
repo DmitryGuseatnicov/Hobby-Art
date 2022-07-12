@@ -56,12 +56,14 @@ const PersonalProfile = () => {
                 (tabs.reviews && 'Отзывы')}
             </Title>
           </div>
-          {(tabs.data && <ProfileData />) ||
-            (tabs.bonuses && <ProfileBonuses />) ||
-            (tabs.favorites && <ProfileFavorites />) ||
-            (tabs.history && <ProfileHistory />) ||
-            (tabs.mailing && <ProfileMailing />) ||
-            (tabs.reviews && <ProfileReviews />)}
+          <div className="personal-profile__content-info">
+            {(tabs.data && <ProfileData />) ||
+              (tabs.bonuses && <ProfileBonuses />) ||
+              (tabs.favorites && <ProfileFavorites />) ||
+              (tabs.history && <ProfileHistory />) ||
+              (tabs.mailing && <ProfileMailing />) ||
+              (tabs.reviews && <ProfileReviews />)}
+          </div>
         </div>
       </div>
     </div>
