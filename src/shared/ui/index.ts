@@ -7,3 +7,4 @@ export { BannerCarousel } from './BannerCarousel/BannerCarousel';
 export { Carousel } from './Carousel/Carousel';
 export { Popup } from './Popup/Popup';
 export { Avatar } from './Avatar/Avatar';
+export { LinkCard } from './LinkCard/LinkCard';

@@ -1,5 +1,5 @@
 import { CartService, Product } from '../modals/cart';
-import { Category } from '../modals/category';
+import { Category, ICategory } from '../modals/category';
 import { IProduct, ISeachParamsOfProduct, ProductService } from '../modals/product';
 import { INewUser, IUser, UserService } from '../modals/user';
 
@@ -67,13 +67,13 @@ const product = {
 
 /** ****************** Category ******************* */
 
-type CategoryCommand = 'filter' | 'info';
 const category = {
-  get(command: CategoryCommand, categoryName: string) {
-    if (command === 'filter') {
-      return categoryService.getFilterParams(categoryName);
-    }
-    return categoryService.getAll();
+  get<T extends ICategory>(): Promise<{ data: T[] }> {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(categoryService.getAll<T>());
+      }, 500);
+    });
   }
 };
 

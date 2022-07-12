@@ -2,11 +2,17 @@
 import categoryJson from '../../initJson/category.json';
 import { storageWorker } from '../../libs';
 
+interface IFilters {
+  name: string;
+  key: string;
+  variants: string[];
+}
+
 interface ICategory {
   id: string;
   name: string;
   img: string;
-  filters: [];
+  filters: IFilters[];
 }
 
 class Category {
@@ -16,8 +22,8 @@ class Category {
     }
   }
 
-  getAll() {
-    const categories = storageWorker.get<ICategory>('category');
+  getAll<T extends ICategory>() {
+    const categories = storageWorker.get<T>('category');
     return { data: categories };
   }
 
@@ -37,4 +43,5 @@ class Category {
   }
 }
 
+export type { ICategory };
 export { Category };
