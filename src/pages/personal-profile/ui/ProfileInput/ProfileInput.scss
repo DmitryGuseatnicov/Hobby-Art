@@ -1,12 +1,12 @@
-@import 'shared/styles/var-and-mixin.scss';
+@import 'shared/styles/var-and-mixin';
 
 .profile-input {
   &__data-widget {
     display: flex;
     justify-content: space-between;
+    padding: 15.5px 32px;
     border: 1px solid $text_color_transparent;
     border-radius: 83px;
-    padding: 15.5px 32px;
 
     @extend %body_text-small;
 
@@ -14,14 +14,15 @@
       display: none;
     }
   }
+
   &__data-value {
     display: flex;
   }
 
   &__data-text {
     margin-left: 5px;
-    font-weight: 600;
     color: $text_color;
+    font-weight: 600;
   }
 
   &__input {
@@ -33,8 +34,8 @@
   }
 
   &__button {
-    border: none;
     background: inherit;
+    border: none;
     cursor: pointer;
   }
 

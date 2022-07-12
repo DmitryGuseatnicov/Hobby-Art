@@ -1,31 +1,31 @@
-@import 'shared/styles/var-and-mixin.scss';
+@import 'shared/styles/var-and-mixin';
 
 .login-form {
   position: relative;
-  border-radius: 20px;
-  padding: 80px 20px;
   width: 100%;
   max-width: 600px;
-  box-shadow: 0 0 30px rgba(68, 68, 68, 0.2);
-  background: #FFF;
+  padding: 80px 20px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgb(68 68 68 / 20%);
 
   &__close {
     position: absolute;
-    right: 30px;
     top: 30px;
-    border: none;
+    right: 30px;
     background: inherit;
+    border: none;
     cursor: pointer;
   }
 
   &__title {
-    margin: 0 auto;
     max-width: 385px;
+    margin: 0 auto;
   }
 
   &__container {
-    margin: 0 auto;
     max-width: 385px;
+    margin: 0 auto;
   }
 
   &__input {
@@ -40,8 +40,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid $text_color_transparent;
     padding: 40px 0;
+    border-bottom: 1px solid $text_color_transparent;
   }
 
   &__login-button {
@@ -58,7 +58,7 @@
   }
 
   &__register-button {
-    margin: 24px auto 0;
     max-width: 215px;
+    margin: 24px auto 0;
   }
 }

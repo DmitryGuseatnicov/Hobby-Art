@@ -2,6 +2,7 @@
 
 .profile-sidebar {
   min-height: 200px;
+
   &__info {
     display: flex;
     align-items: center;
@@ -26,31 +27,31 @@
   }
 
   &__tab-button {
-    margin-top: 1px;
     width: 100%;
-    border: none;
+    margin-top: 1px;
     padding: 17px 0;
-    background: #FFF;
     color: $text_color_transparent;
+    font-weight: 600;
+    text-align: left;
+    background: #fff;
+    border: none;
     border-radius: 20px;
     cursor: pointer;
-    text-align: left;
-    font-weight: 600;
 
     @extend %body_text-medium;
 
     &_active {
-      background: $green_gradient;
-      color: #FFF;
       padding: 17px 32px;
+      color: #fff;
+      background: $green_gradient;
     }
   }
 
   &__exit-button {
     margin-top: 100px;
-    border: none;
-    background-color: inherit;
     color: $text_color_transparent;
+    background-color: inherit;
+    border: none;
     cursor: pointer;
 
     @extend %body_text-medium;
@@ -59,6 +60,7 @@
   &__exit-button-icon {
     vertical-align: top;
   }
+
   &__exit-button-text {
     margin-left: 10px;
   }
