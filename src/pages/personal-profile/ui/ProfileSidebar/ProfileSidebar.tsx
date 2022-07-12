@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
+import { useDispatch } from 'react-redux';
 
 import { userModel } from 'entities/user';
+import { Icon, Title } from 'shared/ui';
 import './ProfileSidebar.scss';
-import { Title } from 'shared/ui';
 
 type TabsIndicator = {
   data: boolean;
@@ -23,6 +24,11 @@ const ProfileSidebar: FC<IProfileSidebar> = (props) => {
   const { onClick, tabsIndicator } = props;
 
   const { avatar, name, lastName } = userModel.useUser();
+
+  const dispatch = useDispatch();
+  const logout = () => {
+    dispatch(userModel.removeUser());
+  };
 
   return (
     <div className="profile-sidebar">
@@ -102,6 +108,12 @@ const ProfileSidebar: FC<IProfileSidebar> = (props) => {
           </button>
         </div>
       </div>
+      <button className="profile-sidebar__exit-button" type="button" onClick={logout}>
+        <span className="profile-sidebar__exit-button-icon">
+          <Icon type="exit" />
+        </span>
+        <span className="profile-sidebar__exit-button-text">Выйти из личного кабинета</span>
+      </button>
     </div>
   );
 };

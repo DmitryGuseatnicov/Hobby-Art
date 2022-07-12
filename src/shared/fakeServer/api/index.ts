@@ -31,7 +31,7 @@ const user = {
     });
   },
 
-  put<T extends IUser>(id: string, params: Partial<IUser>): Promise<{ data: T }> {
+  put<T extends Partial<IUser>>(id: string, params: Partial<IUser>): Promise<{ data: T }> {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve(userService.update(id, params));

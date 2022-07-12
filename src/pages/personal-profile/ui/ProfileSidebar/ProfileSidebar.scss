@@ -28,6 +28,7 @@
   &__tab {}
 
   &__tab-button {
+    margin-top: 1px;
     width: 100%;
     border: none;
     padding: 17px 0;
@@ -38,12 +39,29 @@
     text-align: left;
     font-weight: 600;
 
-    @extend %body_text-big;
+    @extend %body_text-medium;
 
     &_active {
       background: $green_gradient;
       color: #FFF;
       padding: 17px 32px;
     }
+  }
+
+  &__exit-button {
+    margin-top: 100px;
+    border: none;
+    background-color: inherit;
+    color: $text_color_transparent;
+    cursor: pointer;
+
+    @extend %body_text-medium;
+  }
+
+  &__exit-button-icon {
+    vertical-align: top;
+  }
+  &__exit-button-text {
+    margin-left: 10px;
   }
 }

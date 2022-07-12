@@ -77,7 +77,9 @@ class User {
       .get<IUser>('user')
       .map((us) => (us.id === userUpdated.id ? userUpdated : us));
     storageWorker.set('user', users);
-    return { data: userUpdated as T };
+    const { password, ...userResponse } = userUpdated;
+
+    return { data: userResponse as T };
   }
 
   private init() {

@@ -1,0 +1,49 @@
+@import 'shared/styles/var-and-mixin.scss';
+
+.profile-input {
+  &__data-widget {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid $text_color_transparent;
+    border-radius: 83px;
+    padding: 15.5px 32px;
+
+    @extend %body_text-small;
+
+    &_hidden {
+      display: none;
+    }
+  }
+  &__data-value {
+    display: flex;
+  }
+
+  &__data-text {
+    margin-left: 5px;
+    font-weight: 600;
+    color: $text_color;
+  }
+
+  &__input {
+    display: none;
+
+    &_visible {
+      display: block;
+    }
+  }
+
+  &__button {
+    border: none;
+    background: inherit;
+    cursor: pointer;
+  }
+
+  &__button-icon {
+    vertical-align: middle;
+  }
+
+  &__button-text {
+    margin-left: 5px;
+    color: $text_color_transparent;
+  }
+}
