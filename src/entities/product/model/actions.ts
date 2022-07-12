@@ -1,5 +1,7 @@
 import {
+  ICategory,
   IProduct,
+  ISetCategories,
   ISetProduct,
   ISetProductError,
   ISetProductLoading,
@@ -32,4 +34,9 @@ const setUpdatedProduct = (product: IProduct): ISetUpdatedProduct => ({
   payload: product
 });
 
-export { setProduct, setProducts, setError, setLoading, setUpdatedProduct };
+const setCategories = (categories: ICategory[]): ISetCategories => ({
+  type: 'SET_CATEGORIES',
+  payload: categories
+});
+
+export { setProduct, setProducts, setError, setLoading, setUpdatedProduct, setCategories };

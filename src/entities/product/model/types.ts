@@ -19,11 +19,25 @@ interface IProduct {
   colorsLength?: string;
 }
 
+interface IFilters {
+  name: string;
+  key: string;
+  variants: string[];
+}
+
+interface ICategory {
+  id: string;
+  name: string;
+  image: string;
+  filters: IFilters[];
+}
+
 interface IProductState {
   isLoading: boolean;
   error: string;
   product: IProduct;
   products: IProduct[];
+  categories: ICategory[];
 }
 
 interface ISetProducts {
@@ -51,20 +65,28 @@ interface ISetUpdatedProduct {
   payload: IProduct;
 }
 
+interface ISetCategories {
+  type: 'SET_CATEGORIES';
+  payload: ICategory[];
+}
+
 type ProductActions =
   | ISetProducts
   | ISetProduct
   | ISetProductError
   | ISetProductLoading
-  | ISetUpdatedProduct;
+  | ISetUpdatedProduct
+  | ISetCategories;
 
 export type {
   IProduct,
   IProductState,
+  ICategory,
   ProductActions,
   ISetProducts,
   ISetProduct,
   ISetUpdatedProduct,
   ISetProductLoading,
-  ISetProductError
+  ISetProductError,
+  ISetCategories
 };

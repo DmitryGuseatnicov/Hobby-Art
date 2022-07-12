@@ -4,7 +4,8 @@ const initialState: IProductState = {
   isLoading: false,
   error: '',
   product: {} as IProduct,
-  products: []
+  products: [],
+  categories: []
 };
 
 type State = typeof initialState;
@@ -45,6 +46,13 @@ const productReducer = (state: State = initialState, action: ProductActions): St
       return {
         ...state,
         isLoading: action.payload
+      };
+    }
+
+    case 'SET_CATEGORIES': {
+      return {
+        ...state,
+        categories: action.payload
       };
     }
 
