@@ -4,4 +4,4 @@ const ProfileSidebar = () => {
   return <div>1111</div>;
 };
 
-export default ProfileSidebar;
+export { ProfileSidebar };

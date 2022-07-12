@@ -12,7 +12,7 @@ const PersonalProfile = () => {
         </Title>
       </div>
       <div className="personal-profile__widget">
-        <div className="personal-profile__sidebar">SideBar</div>
+        <div className="personal-profile__sidebar">< /></div>
         <div className="personal-profile__content">sasasasasas</div>
       </div>
     </div>

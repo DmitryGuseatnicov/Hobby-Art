@@ -4,4 +4,4 @@ const ProfileBonuses = () => {
   return <div>ProfileBonuses</div>;
 };
 
-export default ProfileBonuses;
+export { ProfileBonuses };
