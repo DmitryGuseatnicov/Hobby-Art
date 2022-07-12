@@ -4,6 +4,6 @@ export { Product } from './product';
 export { Products } from './products';
 export { About } from './about';
 export { DeliveryInfo } from './delivery-info';
-export { PersonalArea } from './personal-area';
+export { PersonalProfile } from './personal-profile';
 export { BonusProgram } from './bonus-program';
 export { Refund } from './refund';

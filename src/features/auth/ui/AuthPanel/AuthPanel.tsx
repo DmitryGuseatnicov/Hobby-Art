@@ -38,7 +38,7 @@ const AuthPanel: FC = () => {
   return (
     <>
       {isAuth ? (
-        <Button modification="with-icon" height="short" icon="entry" link="/personal-area">
+        <Button modification="with-icon" height="short" icon="entry" link="/personal-profile">
           {name}
         </Button>
       ) : (

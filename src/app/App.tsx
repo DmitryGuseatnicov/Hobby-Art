@@ -7,17 +7,18 @@ import {
   Catalog,
   DeliveryInfo,
   Home,
-  PersonalArea,
+  PersonalProfile,
   Product,
   Products,
   Refund
 } from 'pages';
+import { userModel } from 'entities/user';
 
 import Layout from './Layout';
 import 'app/styles/index.scss';
 
 const App = () => {
-  const isAuth = true;
+  const isAuth = userModel.useAuth();
 
   return (
     <Routes>
@@ -30,7 +31,7 @@ const App = () => {
         <Route path="/delivery-info" element={<DeliveryInfo />} />
         <Route path="/bonus-program" element={<BonusProgram />} />
         <Route path="/refund" element={<Refund />} />
-        {isAuth && <Route path="/personal-area" element={<PersonalArea />} />}
+        {isAuth && <Route path="/personal-profile" element={<PersonalProfile />} />}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>
