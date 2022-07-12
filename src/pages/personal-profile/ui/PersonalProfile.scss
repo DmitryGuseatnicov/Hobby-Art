@@ -1,0 +1,11 @@
+.personal-profile {
+  &__widget {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    padding: 50px 60px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 30px rgba(68, 68, 68, 0.05);
+    border-radius: 20px;
+  }
+}
