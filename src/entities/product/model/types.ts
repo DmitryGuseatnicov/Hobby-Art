@@ -28,7 +28,7 @@ interface IFilters {
 interface ICategory {
   id: string;
   name: string;
-  image: string;
+  img: string;
   filters: IFilters[];
 }
 
