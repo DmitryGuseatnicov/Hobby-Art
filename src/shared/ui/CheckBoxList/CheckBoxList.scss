@@ -1,0 +1,23 @@
+@import 'shared/styles/var-and-mixin.scss';
+
+.checkbox-list {
+  width: 100%;
+  max-width: 227px;
+
+  &__title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #424242;
+  }
+
+  &__items {
+    list-style: none;
+    margin-top: 10px;
+  }
+
+  &_underlined {
+    border-bottom: 1px solid $text_color_transparent;
+    padding-bottom: 27px;
+  }
+}
