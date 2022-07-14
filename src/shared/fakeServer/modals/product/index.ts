@@ -10,11 +10,11 @@ interface IProduct {
   descriptions: string;
   type: string;
   sku: string;
-  weight: string;
-  length: string;
+  weight?: string;
+  length?: string;
   brand: string;
-  composition: string;
-  country: string;
+  composition?: string;
+  country?: string;
   colors: Array<string>;
   likes: Array<string>;
   category: string;
