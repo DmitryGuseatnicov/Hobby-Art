@@ -10,9 +10,10 @@ const useError = () => useTypedSelector((state) => state.productReducer.error);
 
 const useCategories = () => useTypedSelector((state) => state.productReducer.categories);
 
-const useFilters = (name: string) =>
+const useFilters = (categoryName: string) =>
   useTypedSelector((state) => {
-    return state.productReducer.categories.filter((cr) => cr.name === name);
+    const [category] = state.productReducer.categories.filter((cr) => cr.name === categoryName);
+    return category ? category.filters : [];
   });
 
 export { useProduct, useProducts, useLoading, useError, useCategories, useFilters };

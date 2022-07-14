@@ -82,6 +82,7 @@ export type {
   IProduct,
   IProductState,
   ICategory,
+  IFilters,
   ProductActions,
   ISetProducts,
   ISetProduct,
