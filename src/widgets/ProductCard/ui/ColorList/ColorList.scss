@@ -1,0 +1,37 @@
+.color-list {
+  display: flex;
+  list-style: none;
+
+  &_small {
+    .color-list {
+      &__item {
+        margin-right: 2px;
+        border-radius: 50%;
+        width: 16px;
+        height: 16px;
+      }
+
+      &__last-length {
+        margin-left: 4px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 16px;
+      }
+    }
+  }
+
+  &_big {
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .color-list {
+      &__item {
+        margin-right: 15px;
+        border: 2px solid #BDBDBD;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+      }
+    }
+  }
+}
