@@ -21,7 +21,7 @@ const ColorList: FC<IColorList> = (props) => {
     return (
       <ul className={classes}>
         {colors.map((color) => (
-          <li className="color-list__item" style={{ background: color }} />
+          <li className="color-list__item" style={{ background: color }} key={color} />
         ))}
       </ul>
     );
@@ -31,10 +31,14 @@ const ColorList: FC<IColorList> = (props) => {
     <ul className={classes}>
       {colors.map((color, index) => {
         if (index <= 3) {
-          return <li className="color-list__item" style={{ background: color }} />;
+          return <li className="color-list__item" style={{ background: color }} key={color} />;
         }
         if (index === 4) {
-          return <li className="color-list__last-length">+{colors.length - index}</li>;
+          return (
+            <li className="color-list__last-length" key={color}>
+              +{colors.length - index}
+            </li>
+          );
         }
         return '';
       })}

@@ -38,7 +38,7 @@ const ProductCardMini: FC<IProductCardMini> = (props) => {
       </NavLink>
       <div className="product-card-mini__title">
         <Title level={4} size="small">
-          {createTitle}
+          {createTitle()}
         </Title>
       </div>
       <div className="product-card-mini__colors">
