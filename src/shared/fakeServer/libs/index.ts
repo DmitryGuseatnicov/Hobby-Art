@@ -14,7 +14,13 @@ const storageWorker = {
 };
 
 const contains = (where: string[] | number[], what: string[] | number[]) => {
-  if (!what || where.length <= 0 || typeof what === 'string' || typeof where === 'string') {
+  if (
+    !what ||
+    !where ||
+    where.length <= 0 ||
+    typeof what === 'string' ||
+    typeof where === 'string'
+  ) {
     return false;
   }
   for (let i = 0; i < what.length; i += 1) {
@@ -32,6 +38,7 @@ const contains = (where: string[] | number[], what: string[] | number[]) => {
 
 const paramsFilterMatcher = <T, R>(state: T[], data: Partial<R>) => {
   const entries = Object.entries(data);
+
   const stateFiltered = state.filter((pr) => {
     return !entries
       .reduce((prev: boolean[], next) => {

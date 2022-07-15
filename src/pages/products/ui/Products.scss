@@ -1,0 +1,22 @@
+.products {
+  display: flex;
+  justify-content: space-between;
+
+  &__sidebar {
+    min-width: 227px;
+  }
+
+  &__items {
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 50px;
+    height: fit-content;
+  }
+
+  &__item {
+    width: 225px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+  }
+}

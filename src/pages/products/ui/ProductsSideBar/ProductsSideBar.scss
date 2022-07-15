@@ -1,0 +1,17 @@
+.products-sidebar {
+  &__checkbox-list {
+    margin-top: 20px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__buttons {
+    margin-top: 60px;
+  }
+
+  &__button {
+    margin-top: 20px;
+  }
+}
