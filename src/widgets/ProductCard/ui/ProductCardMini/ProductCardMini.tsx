@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
 import { NavLink } from 'react-router-dom';
 
+import { Like } from 'features/favorites';
+import { userModel } from 'entities/user';
 import { Title } from 'shared/ui';
 
 import { ColorList } from '../ColorList/ColorList';
@@ -9,15 +11,18 @@ import './ProductCardMini.scss';
 interface IProductCardMini {
   id: string;
   price: string;
+  img: string;
+  colors: string[];
+  likes: string[];
   type?: string;
   sku?: string;
   brand?: string;
-  img: string;
-  colors: string[];
 }
 
 const ProductCardMini: FC<IProductCardMini> = (props) => {
-  const { id, price, colors, img, type = '', sku = '', brand = '' } = props;
+  const { id, price, colors, img, likes, type = '', sku = '', brand = '' } = props;
+
+  const user = userModel.useUser();
 
   const createTitle = () => {
     return `${type} ${brand} ${sku} `;
@@ -26,7 +31,9 @@ const ProductCardMini: FC<IProductCardMini> = (props) => {
   return (
     <div className="product-card-mini">
       <div className="product-card-mini__panel">
-        <div className="product-card-mini__like">Like</div>
+        <div className="product-card-mini__like">
+          <Like id={id} isLiked={likes.includes(user.id)} />
+        </div>
         <div className="product-card-mini__description-button">
           <div className="product-card-mini__description-circle" />
           <div className="product-card-mini__description-circle" />
