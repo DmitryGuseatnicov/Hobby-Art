@@ -10,16 +10,21 @@ import { Button, CheckBoxList } from 'shared/ui';
 import { getProductsByParams } from '../../actions';
 import './ProductsSideBar.scss';
 
+// FIX-ME Нужен рефакториг и упрошение
 const ProductsSideBar: FC = () => {
+  const dispatch = useDispatch<AsyncDispatch>();
+
   const { category = '' } = useParams<{ category: string }>();
 
   const filters = productModel.useFilters(category);
 
-  const [params, setParams] = useState<{ [x: string]: string[] }>(
-    filters.reduce<any>((prev, next) => {
+  const createParamsForFilter = (): { [x: string]: string[] } => {
+    return filters.reduce<any>((prev, next) => {
       return { ...prev, [next.key]: [] };
-    }, {})
-  );
+    }, {});
+  };
+
+  const [params, setParams] = useState(createParamsForFilter());
 
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name: key, value } = e.target;
@@ -31,7 +36,10 @@ const ProductsSideBar: FC = () => {
     setParams({ ...params, [key]: params[key].filter((el: string) => el !== value) });
   };
 
-  const dispatch = useDispatch<AsyncDispatch>();
+  const clear = () => {
+    setParams(createParamsForFilter());
+    dispatch(getProductsByParams({ category }));
+  };
 
   const formHandler = (e: React.FormEvent) => {
     e.preventDefault();
@@ -80,7 +88,7 @@ const ProductsSideBar: FC = () => {
           </Button>
         </div>
         <div className="products-sidebar__button">
-          <Button modification="transparent" height="standard">
+          <Button modification="transparent" height="standard" onClick={clear}>
             Очистить
           </Button>
         </div>
