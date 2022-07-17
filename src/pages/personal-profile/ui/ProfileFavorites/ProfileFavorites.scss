@@ -1,0 +1,11 @@
+.profile-favorites {
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+}

@@ -2,6 +2,7 @@ import { Dispatch } from 'react';
 
 import { userModel } from 'entities/user';
 import * as fakeServer from 'shared/fakeServer';
+import { productModel } from 'entities/product';
 
 type UpdateUserArgs = {
   password: string;
@@ -28,5 +29,17 @@ const updateUserData =
       console.log(error);
     }
   };
+
+const getFavorites =
+  (userId: string) => async (dispatch: Dispatch<productModel.ProductActions>) => {
+    try {
+      const res = await fakeServer.product.get<productModel.IProduct>({ likes: [userId] });
+      const product = res.data;
+      dispatch(productModel.setProducts(product));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
 export type { UpdateUserArgs };
-export { updateUserData };
+export { updateUserData, getFavorites };
