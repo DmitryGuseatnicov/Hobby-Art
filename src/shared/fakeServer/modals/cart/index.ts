@@ -1,6 +1,7 @@
 /* eslint-disable class-methods-use-this */
 import cartJson from 'shared/fakeServer/initJson/cart.json';
 import { storageWorker } from 'shared/fakeServer/libs';
+import { IProduct, productService } from '../product';
 
 type Product = {
   count: number;
@@ -10,6 +11,11 @@ type Product = {
 interface ICart {
   user: string;
   products: Product[];
+}
+
+interface ICartResponse {
+  count: number;
+  product: IProduct;
 }
 
 class Cart {
@@ -30,7 +36,22 @@ class Cart {
     storageWorker.set('cart', carts);
   }
 
-  public add(userId: string, product: Product) {
+  public get<T extends ICartResponse>(userId: string) {
+    const carts = storageWorker.get<ICart>('cart');
+    const [concreteCart] = carts.filter((cr) => cr.user === userId);
+
+    const response = concreteCart.products.map((pr) => {
+      const { data } = productService.getByParams({ id: pr.id });
+      return {
+        count: pr.count,
+        product: data[0]
+      };
+    });
+
+    return { data: response as T[] };
+  }
+
+  public add<T extends ICartResponse>(userId: string, product: Product) {
     const carts = storageWorker.get<ICart>('cart');
     const [concreteCart] = carts.filter((cr) => cr.user === userId);
 
@@ -56,10 +77,18 @@ class Cart {
     const updatedCarts = carts.map((cr) => (cr.user === concreteCart.user ? concreteCart : cr));
     storageWorker.set('cart', updatedCarts);
 
-    return { data: concreteCart.products };
+    const response = concreteCart.products.map((pr) => {
+      const { data } = productService.getByParams({ id: pr.id });
+      return {
+        count: pr.count,
+        product: data[0]
+      };
+    });
+
+    return { data: response as T[] };
   }
 
-  public remove(userId: string, product: Product) {
+  public remove<T extends ICartResponse>(userId: string, product: Product) {
     const carts = storageWorker.get<ICart>('cart');
     const [concreteCart] = carts.filter((cr) => cr.user === userId);
 
@@ -82,10 +111,19 @@ class Cart {
       const updatedCarts = carts.map((cr) => (cr.user === concreteCart.user ? concreteCart : cr));
 
       storageWorker.set('cart', updatedCarts);
-      return { data: concreteCart.products };
+
+      const response = concreteCart.products.map((pr) => {
+        const { data } = productService.getByParams({ id: pr.id });
+        return {
+          count: pr.count,
+          product: data[0]
+        };
+      });
+
+      return { data: response as T[] };
     }
 
-    return { data: {} };
+    return { data: [] };
   }
 
   public removeAll(userId: string) {
@@ -104,5 +142,7 @@ class Cart {
   }
 }
 
-export type { ICart, Product };
-export { Cart as CartService };
+const cartService = new Cart();
+
+export type { ICart, Product, ICartResponse };
+export { cartService };

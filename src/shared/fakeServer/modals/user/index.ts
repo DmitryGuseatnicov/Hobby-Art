@@ -1,8 +1,9 @@
 /* eslint-disable class-methods-use-this */
 import { v4 as uuid } from 'uuid';
-import * as fakeServer from 'shared/fakeServer/api';
+
 import userJson from 'shared/fakeServer/initJson/user.json';
 import { storageWorker, paramsFilterMatcher } from 'shared/fakeServer/libs';
+import { cartService } from '../cart';
 
 interface IUser {
   id: string;
@@ -62,7 +63,7 @@ class User {
     const users = storageWorker.get<IUser>('user');
     users.push(newUser);
     storageWorker.set('user', users);
-    fakeServer.cart.post(newUser.id);
+    cartService.create(newUser.id);
 
     const { password, ...responseUser } = newUser;
     return { data: responseUser as T };
@@ -85,5 +86,7 @@ class User {
   }
 }
 
+const userService = new User();
+
 export type { IUser, INewUser };
-export { User as UserService };
+export { userService };

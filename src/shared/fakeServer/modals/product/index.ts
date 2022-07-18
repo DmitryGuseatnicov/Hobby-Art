@@ -84,5 +84,6 @@ class Product {
   }
 }
 
+const productService = new Product();
 export type { IProduct, ISeachParamsOfProduct };
-export { Product as ProductService };
+export { productService };

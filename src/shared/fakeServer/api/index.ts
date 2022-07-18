@@ -1,12 +1,7 @@
-import { CartService, Product } from '../modals/cart';
-import { Category, ICategory } from '../modals/category';
-import { IProduct, ISeachParamsOfProduct, ProductService } from '../modals/product';
-import { INewUser, IUser, UserService } from '../modals/user';
-
-const userService = new UserService();
-const productService = new ProductService();
-const cartService = new CartService();
-const categoryService = new Category();
+import { cartService, ICartResponse, Product } from '../modals/cart';
+import { categoryService, ICategory } from '../modals/category';
+import { IProduct, ISeachParamsOfProduct, productService } from '../modals/product';
+import { INewUser, IUser, userService } from '../modals/user';
 
 /** ****************** USER ******************* */
 
@@ -81,7 +76,6 @@ const category = {
 
 type CartData = {
   userId: string;
-  // FIX-ME Product type
   product: Product;
 };
 
@@ -91,18 +85,25 @@ const cart = {
     cartService.create(userId);
   },
 
-  // Fix-ME make distract of card Data
-  put(command: CartCommand, cartData: CartData) {
-    if (command === 'increment') {
-      return cartService.add(cartData.userId, cartData.product);
-    }
-    if (command === 'decrement') {
-      return cartService.remove(cartData.userId, cartData.product);
-    }
-    if (command === 'clear') {
-      return cartService.remove(cartData.userId, cartData.product);
-    }
-    return undefined;
+  get<T extends ICartResponse>(userId: string): Promise<{ data: T[] }> {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(cartService.get(userId));
+      }, 500);
+    });
+  },
+
+  put<T extends ICartResponse>(command: CartCommand, cartData: CartData): Promise<{ data: T[] }> {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        if (command === 'increment') {
+          resolve(cartService.add(cartData.userId, cartData.product));
+        }
+        if (command === 'decrement') {
+          resolve(cartService.remove(cartData.userId, cartData.product));
+        }
+      }, 500);
+    });
   }
 };
 

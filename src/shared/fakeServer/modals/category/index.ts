@@ -43,5 +43,7 @@ class Category {
   }
 }
 
+const categoryService = new Category();
+
 export type { ICategory };
-export { Category };
+export { categoryService };
