@@ -1,7 +1,7 @@
 import { productModel } from 'entities/product';
 import { Dispatch } from 'redux';
 
-import * as fakeServer from 'shared/fakeServer';
+import { fakeServer } from 'shared/fakeServer';
 
 type ToggleFavoritesArgs = {
   userId: string;

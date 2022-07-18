@@ -1,6 +1,6 @@
 import { Dispatch } from 'react';
 import { productModel } from 'entities/product';
-import * as fakeServer from 'shared/fakeServer';
+import { fakeServer } from 'shared/fakeServer';
 
 const getCategories = () => async (dispatch: Dispatch<productModel.ProductActions>) => {
   try {

@@ -1,7 +1,7 @@
 import { Dispatch } from 'react';
 
 import { userModel } from 'entities/user';
-import * as fakeServer from 'shared/fakeServer';
+import { fakeServer } from 'shared/fakeServer';
 
 type UpdateUserArgs = {
   password: string;

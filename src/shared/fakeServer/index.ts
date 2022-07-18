@@ -1,1 +1,1 @@
-export * from './api';
+export * as fakeServer from './api';

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import { CatalogNav } from 'features/catalog';
 import { productModel } from 'entities/product';
-import * as fakeServer from 'shared/fakeServer';
+import { fakeServer } from 'shared/fakeServer';
 
 import { ProductSwitcher } from './ProductSwitcher/ProductSwitcher';
 import { Banner } from './Banner/Banner';
