@@ -2,6 +2,7 @@ import {
   ICategory,
   IProduct,
   ISetCategories,
+  ISetFavoritesProducts,
   ISetProduct,
   ISetProductError,
   ISetProductLoading,
@@ -16,6 +17,11 @@ const setProduct = (product: IProduct): ISetProduct => ({
 
 const setProducts = (products: IProduct[]): ISetProducts => ({
   type: 'SET_PRODUCTS',
+  payload: products
+});
+
+const setFavoritesProducts = (products: IProduct[]): ISetFavoritesProducts => ({
+  type: 'SET_FAVORITES_PRODUCTS',
   payload: products
 });
 
@@ -39,4 +45,12 @@ const setCategories = (categories: ICategory[]): ISetCategories => ({
   payload: categories
 });
 
-export { setProduct, setProducts, setError, setLoading, setUpdatedProduct, setCategories };
+export {
+  setProduct,
+  setProducts,
+  setError,
+  setLoading,
+  setUpdatedProduct,
+  setCategories,
+  setFavoritesProducts
+};

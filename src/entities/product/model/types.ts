@@ -37,11 +37,17 @@ interface IProductState {
   error: string;
   product: IProduct;
   products: IProduct[];
+  favorites: IProduct[];
   categories: ICategory[];
 }
 
 interface ISetProducts {
   type: 'SET_PRODUCTS';
+  payload: IProduct[];
+}
+
+interface ISetFavoritesProducts {
+  type: 'SET_FAVORITES_PRODUCTS';
   payload: IProduct[];
 }
 
@@ -76,7 +82,8 @@ type ProductActions =
   | ISetProductError
   | ISetProductLoading
   | ISetUpdatedProduct
-  | ISetCategories;
+  | ISetCategories
+  | ISetFavoritesProducts;
 
 export type {
   IProduct,
@@ -89,5 +96,6 @@ export type {
   ISetUpdatedProduct,
   ISetProductLoading,
   ISetProductError,
-  ISetCategories
+  ISetCategories,
+  ISetFavoritesProducts
 };

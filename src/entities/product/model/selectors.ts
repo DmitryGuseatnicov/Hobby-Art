@@ -4,6 +4,8 @@ const useProduct = () => useTypedSelector((state) => state.productReducer.produc
 
 const useProducts = () => useTypedSelector((state) => state.productReducer.products);
 
+const useFavorites = () => useTypedSelector((state) => state.productReducer.favorites);
+
 const useLoading = () => useTypedSelector((state) => state.productReducer.isLoading);
 
 const useError = () => useTypedSelector((state) => state.productReducer.error);
@@ -16,4 +18,4 @@ const useFilters = (categoryName: string) =>
     return category ? category.filters : [];
   });
 
-export { useProduct, useProducts, useLoading, useError, useCategories, useFilters };
+export { useProduct, useProducts, useLoading, useError, useCategories, useFilters, useFavorites };

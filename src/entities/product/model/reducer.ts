@@ -5,6 +5,7 @@ const initialState: IProductState = {
   error: '',
   product: {} as IProduct,
   products: [],
+  favorites: [],
   categories: []
 };
 
@@ -27,11 +28,19 @@ const productReducer = (state: State = initialState, action: ProductActions): St
       };
     }
 
+    case 'SET_FAVORITES_PRODUCTS': {
+      return {
+        ...state,
+        favorites: action.payload
+      };
+    }
+
     case 'SET_UPDATED_PRODUCT': {
       return {
         ...state,
         product: action.payload,
-        products: state.products.map((pr) => (pr.id === action.payload.id ? action.payload : pr))
+        products: state.products.map((pr) => (pr.id === action.payload.id ? action.payload : pr)),
+        favorites: state.favorites.map((pr) => (pr.id === action.payload.id ? action.payload : pr))
       };
     }
 
