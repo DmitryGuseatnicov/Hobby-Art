@@ -1,1 +1,1 @@
-export { Like } from './ui';
+export * from './ui';

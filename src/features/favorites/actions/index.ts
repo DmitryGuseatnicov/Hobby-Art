@@ -19,4 +19,15 @@ const toggleFavorites =
     }
   };
 
-export { toggleFavorites };
+const getFavorites =
+  (userId: string) => async (dispatch: Dispatch<productModel.ProductActions>) => {
+    try {
+      const res = await fakeServer.product.get<productModel.IProduct>({ likes: [userId] });
+      const product = res.data;
+      dispatch(productModel.setFavoritesProducts(product));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+export { toggleFavorites, getFavorites };

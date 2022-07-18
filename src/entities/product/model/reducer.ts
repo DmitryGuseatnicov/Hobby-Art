@@ -40,7 +40,12 @@ const productReducer = (state: State = initialState, action: ProductActions): St
         ...state,
         product: action.payload,
         products: state.products.map((pr) => (pr.id === action.payload.id ? action.payload : pr)),
-        favorites: state.favorites.map((pr) => (pr.id === action.payload.id ? action.payload : pr))
+        favorites: (() => {
+          const isInFavorites = state.favorites.find((pr) => pr.id === action.payload.id);
+          return isInFavorites
+            ? state.favorites.filter((pr) => pr.id !== action.payload.id)
+            : [...state.favorites, action.payload];
+        })()
       };
     }
 

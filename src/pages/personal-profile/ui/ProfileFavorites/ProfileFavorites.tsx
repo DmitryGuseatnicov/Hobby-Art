@@ -1,23 +1,12 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import React from 'react';
 
 import { ProductCardMini } from 'widgets/ProductCard';
 import { productModel } from 'entities/product';
-import { AsyncDispatch } from 'entities/store';
-import { userModel } from 'entities/user';
 
-import { getFavorites } from '../../actions';
 import './ProfileFavorites.scss';
 
 const ProfileFavorites = () => {
-  const products = productModel.useProducts();
-  const user = userModel.useUser();
-
-  const dispatch = useDispatch<AsyncDispatch>();
-  useEffect(() => {
-    dispatch(getFavorites(user.id));
-  });
-
+  const products = productModel.useFavorites();
   return (
     <div className="profile-favorites">
       <div className="profile-favorites__items">

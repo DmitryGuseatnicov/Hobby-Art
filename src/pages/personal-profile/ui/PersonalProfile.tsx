@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import { Title } from 'shared/ui';
 
@@ -12,13 +13,16 @@ import { ProfileReviews } from './ProfileReviews/ProfileReviews';
 import './PersonalProfile.scss';
 
 const PersonalProfile = () => {
+  const { state } = useLocation() as { state: { link: string } };
+  const link = state?.link ? state?.link : 'data';
+
   const [tabs, setTabs] = useState({
-    data: true,
-    bonuses: false,
-    favorites: false,
-    history: false,
-    mailing: false,
-    reviews: false
+    data: link === 'data',
+    bonuses: link === 'bonuses',
+    favorites: link === 'favorites',
+    history: link === 'history',
+    mailing: link === 'mailing',
+    reviews: link === 'reviews'
   });
 
   const tabsHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
