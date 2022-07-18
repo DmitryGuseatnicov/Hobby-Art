@@ -13,12 +13,13 @@ interface IButton {
   icon?: IconsName;
   isSubmit?: boolean;
   link?: string;
+  state?: any;
   onClick?: () => void;
   children: any;
 }
 
 const Button: FC<IButton> = (props) => {
-  const { modification, height, children, onClick, link, icon = '', isSubmit = '' } = props;
+  const { modification, height, children, onClick, link, state, icon = '', isSubmit = '' } = props;
   const variantModifiers = {
     'with-icon': 'button_with-icon',
     pink: 'button_pink',
@@ -50,7 +51,7 @@ const Button: FC<IButton> = (props) => {
   if (modification === 'with-icon') {
     if (link) {
       return (
-        <Link className={classes} to={link}>
+        <Link className={classes} to={link} state={state}>
           {elementWithIcon}
         </Link>
       );
@@ -65,7 +66,7 @@ const Button: FC<IButton> = (props) => {
   if (modification === 'pink') {
     if (link) {
       return (
-        <Link className={classes} to={link}>
+        <Link className={classes} to={link} state={state}>
           {element}
         </Link>
       );
@@ -80,7 +81,7 @@ const Button: FC<IButton> = (props) => {
   if (modification === 'transparent') {
     if (link) {
       return (
-        <Link className={classes} to={link}>
+        <Link className={classes} to={link} state={state}>
           {elementWithIcon}
         </Link>
       );
@@ -94,7 +95,7 @@ const Button: FC<IButton> = (props) => {
 
   if (link) {
     return (
-      <Link className={classes} to={link}>
+      <Link className={classes} to={link} state={state}>
         {children}
       </Link>
     );
