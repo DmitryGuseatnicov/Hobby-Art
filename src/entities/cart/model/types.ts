@@ -1,6 +1,11 @@
 interface ICartProduct {
-  id: string;
   count: number;
+  product: {
+    id: string;
+    img: string;
+    title: string;
+    price: string;
+  };
 }
 
 interface ICartState {
