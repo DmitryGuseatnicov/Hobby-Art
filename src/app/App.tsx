@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
 import {
@@ -12,6 +13,8 @@ import {
   Products,
   Refund
 } from 'pages';
+import { shopping } from 'features/shopping';
+import { AsyncDispatch } from 'entities/store';
 import { userModel } from 'entities/user';
 
 import Layout from './Layout';
@@ -19,6 +22,12 @@ import 'app/styles/index.scss';
 
 const App = () => {
   const isAuth = userModel.useAuth();
+  const user = userModel.useUser();
+
+  const dispatch = useDispatch<AsyncDispatch>();
+  useEffect(() => {
+    dispatch(shopping.getCart(user.id));
+  }, [user.id]);
 
   return (
     <Routes>
