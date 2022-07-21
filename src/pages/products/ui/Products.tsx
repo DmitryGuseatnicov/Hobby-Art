@@ -23,6 +23,9 @@ const Products = () => {
               img={pr.img}
               colors={pr.colors}
               likes={pr.likes}
+              type={pr.type}
+              brand={pr.brand}
+              sku={pr.sku}
             />
           </div>
         ))}
