@@ -13,6 +13,7 @@ import {
   Products,
   Refund
 } from 'pages';
+import { favorites } from 'features/favorites';
 import { shopping } from 'features/shopping';
 import { AsyncDispatch } from 'entities/store';
 import { userModel } from 'entities/user';
@@ -27,6 +28,7 @@ const App = () => {
   const dispatch = useDispatch<AsyncDispatch>();
   useEffect(() => {
     dispatch(shopping.getCart(user.id));
+    dispatch(favorites.getFavorites(user.id));
   }, [user.id]);
 
   return (
