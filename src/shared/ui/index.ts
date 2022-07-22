@@ -10,3 +10,4 @@ export { Avatar } from './Avatar/Avatar';
 export { LinkCard } from './LinkCard/LinkCard';
 export { CheckBox } from './CheckBox/CheckBox';
 export { CheckBoxList } from './CheckBoxList/CheckBoxList';
+export { Counter } from './Counter/Counter';

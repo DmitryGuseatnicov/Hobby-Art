@@ -1,0 +1,25 @@
+.counter {
+  border: 1px solid #BDBDBD;
+  border-radius: 46px;
+  display: flex;
+  align-items: center;
+  max-width: 80px;
+  padding: 4px 11px;
+  width: 100%;
+
+  &__button {
+    border: none;
+    background: inherit;
+    font-size: 18px;
+    color: #BDBDBD;
+    cursor: pointer;
+    width: 10px;
+  }
+
+  &__value {
+    flex-grow: 1;
+    font-size: 18px;
+    color: #BDBDBD;
+    text-align: center;
+  }
+}
