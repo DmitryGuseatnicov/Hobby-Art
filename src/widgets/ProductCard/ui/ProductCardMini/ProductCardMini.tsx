@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { NavLink } from 'react-router-dom';
 
+import { AddToCart } from 'features/shopping';
 import { Like } from 'features/favorites';
 import { userModel } from 'entities/user';
 import { Title } from 'shared/ui';
@@ -52,7 +53,11 @@ const ProductCardMini: FC<IProductCardMini> = (props) => {
         <ColorList colors={colors} size="small" visibleElements="reduced" />
       </div>
       <div className="product-card-mini__price">{`${price} ₽`}</div>
-      <div className="product-card-mini__button">Add to cart</div>
+      <div className="product-card-mini__button">
+        <AddToCart count={1} productId={id} hasIcon>
+          В Корзину
+        </AddToCart>
+      </div>
     </div>
   );
 };
