@@ -7,6 +7,7 @@ import { store } from 'entities/store';
 import { fakeServer } from 'shared/fakeServer';
 import App from 'app/App';
 
+fakeServer.initFakeServer();
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <BrowserRouter>
@@ -17,5 +18,3 @@ root.render(
     </Provider>
   </BrowserRouter>
 );
-
-fakeServer.initFakeServer();

@@ -9,10 +9,11 @@ const initialState: IProductState = {
   categories: []
 };
 
-type State = typeof initialState;
-
-// eslint-disable-next-line default-param-last
-const productReducer = (state: State = initialState, action: ProductActions): State => {
+const productReducer = (
+  // eslint-disable-next-line default-param-last
+  state: IProductState = initialState,
+  action: ProductActions
+): IProductState => {
   switch (action.type) {
     case 'SET_PRODUCT': {
       return {

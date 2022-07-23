@@ -1,0 +1,17 @@
+@import 'shared/styles/var-and-mixin';
+
+.characteristic-list {
+  max-width: 430px;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid $text_color_transparent;
+  }
+
+  &__value {
+    width: 30%;
+  }
+}

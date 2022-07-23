@@ -1,0 +1,46 @@
+.product-card {
+  display: flex;
+  justify-content: space-between;
+
+  &__gallery {
+    width: calc(50% - 30px);
+    margin-right: 30px;
+  }
+
+  &__photo {
+    width: 100%;
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  &__colors {
+    margin: 22px auto;
+  }
+
+  &__info {
+    width: 50%;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__like {
+    margin-right: 20px;
+  }
+
+  &__description {
+    margin-top: 22px;
+  }
+
+  &__characteristics {
+    margin-top: 40px;
+  }
+
+}

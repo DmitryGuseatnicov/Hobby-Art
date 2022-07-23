@@ -1,11 +1,12 @@
 import React, { FC } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { AddToCart } from 'features/shopping';
 import { Like } from 'features/favorites';
 import { userModel } from 'entities/user';
 import { Title } from 'shared/ui';
 
+import { createTitle } from '../../libs/createTitle';
 import { ColorList } from '../ColorList/ColorList';
 import './ProductCardMini.scss';
 
@@ -25,10 +26,6 @@ const ProductCardMini: FC<IProductCardMini> = (props) => {
 
   const user = userModel.useUser();
 
-  const createTitle = () => {
-    return `${type} ${brand} ${sku} `;
-  };
-
   return (
     <div className="product-card-mini">
       <div className="product-card-mini__panel">
@@ -41,12 +38,12 @@ const ProductCardMini: FC<IProductCardMini> = (props) => {
           <div className="product-card-mini__description-circle" />
         </div>
       </div>
-      <NavLink className="product-card-mini__photo" to={`/product/${id}`}>
+      <Link className="product-card-mini__photo" to={`/product/${id}`}>
         <img className="product-card-mini__img" src={img} alt="" />
-      </NavLink>
+      </Link>
       <div className="product-card-mini__title">
         <Title level={4} size="small">
-          {createTitle()}
+          {createTitle({ brand, sku, type })}
         </Title>
       </div>
       <div className="product-card-mini__colors">
