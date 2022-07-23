@@ -1,0 +1,15 @@
+.cart-counter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 450px;
+
+  &__counter {
+    width: 80px;
+    margin: 0 20px;
+  }
+
+  &__add-to-cart {
+    flex-grow: 1;
+  }
+}

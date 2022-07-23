@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { CartCounter } from 'features/shopping';
 import { Like } from 'features/favorites';
 import { productModel } from 'entities/product';
 import { userModel } from 'entities/user';
@@ -19,6 +20,7 @@ const ProductCard = () => {
     brand,
     sku,
     type,
+    price,
     descriptions,
     colors = [],
     likes = [],
@@ -66,7 +68,9 @@ const ProductCard = () => {
               colorsLength={colorsLength}
             />
           </div>
-          <div className="product-card__counter">counter</div>
+          <div className="product-card__counter">
+            <CartCounter productId={productId} price={price} />
+          </div>
         </div>
       </div>
     </div>
