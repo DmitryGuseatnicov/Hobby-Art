@@ -1,5 +1,5 @@
 .counter {
-  border: 1px solid #BDBDBD;
+  border: 1px solid #bdbdbd;
   border-radius: 46px;
   display: flex;
   align-items: center;
@@ -11,7 +11,7 @@
     border: none;
     background: inherit;
     font-size: 18px;
-    color: #BDBDBD;
+    color: #bdbdbd;
     cursor: pointer;
     width: 10px;
   }
@@ -19,7 +19,7 @@
   &__value {
     flex-grow: 1;
     font-size: 18px;
-    color: #BDBDBD;
+    color: #bdbdbd;
     text-align: center;
   }
 }

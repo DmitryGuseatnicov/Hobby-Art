@@ -3,6 +3,7 @@
     margin: 0 auto;
     width: fit-content;
   }
+
   &__items {
     display: grid;
     grid-template-columns: repeat(4, 0.8fr);
