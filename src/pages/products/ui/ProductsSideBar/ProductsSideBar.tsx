@@ -1,67 +1,26 @@
-/* eslint-disable no-unused-vars */
-import React, { FC, useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import React, { FC, useEffect } from 'react';
 
-import { productModel } from 'entities/product';
-import { AsyncDispatch } from 'entities/store';
 import { Button, CheckBoxList } from 'shared/ui';
 
-import { getProductsByParams } from '../../actions';
+import { useHandlers } from './hooks';
 import './ProductsSideBar.scss';
 
-// FIX-ME Нужен рефакториг и упрошение
 const ProductsSideBar: FC = () => {
-  const dispatch = useDispatch<AsyncDispatch>();
-
-  const { category = '' } = useParams<{ category: string }>();
-
-  const filters = productModel.useFilters(category);
-
-  const createParamsForFilter = (): { [x: string]: string[] } => {
-    return filters.reduce<any>((prev, next) => {
-      return { ...prev, [next.key]: [] };
-    }, {});
-  };
-
-  const [params, setParams] = useState(createParamsForFilter());
-
-  const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name: key, value } = e.target;
-
-    if (!params[key].includes(value)) {
-      setParams({ ...params, [key]: [...params[key], value] });
-      return;
-    }
-    setParams({ ...params, [key]: params[key].filter((el: string) => el !== value) });
-  };
-
-  const clear = () => {
-    setParams(createParamsForFilter());
-    dispatch(getProductsByParams({ category }));
-  };
-
-  const formHandler = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    const searchParams = Object.entries(params)
-      .filter((entry) => {
-        const [key, values] = entry;
-        return values.length > 0;
-      })
-      .reduce((prev, next) => {
-        return { ...prev, [next[0]]: next[1] };
-      }, {});
-
-    dispatch(getProductsByParams({ category, ...searchParams }));
-  };
+  const {
+    params,
+    filters,
+    handleCheckBoxChange,
+    handleClearButtonClick,
+    handleFormSubmit,
+    handlePageOnLoad
+  } = useHandlers();
 
   useEffect(() => {
-    dispatch(getProductsByParams({ category }));
-  }, [category]);
+    handlePageOnLoad();
+  }, []);
 
   return (
-    <form className="products-sidebar" onSubmit={formHandler}>
+    <form className="products-sidebar" onSubmit={handleFormSubmit}>
       <div className="products-sidebar__inputs">
         {filters.map((fl, i) => (
           <div className="products-sidebar__checkbox-list" key={fl.key}>
@@ -74,7 +33,7 @@ const ProductsSideBar: FC = () => {
                   name: fl.key,
                   value: checkBox,
                   isChecked: params[fl.key].includes(checkBox),
-                  onChange: changeHandler
+                  onChange: handleCheckBoxChange
                 };
               })}
             />
@@ -88,7 +47,7 @@ const ProductsSideBar: FC = () => {
           </Button>
         </div>
         <div className="products-sidebar__button">
-          <Button modification="transparent" height="standard" onClick={clear}>
+          <Button modification="transparent" height="standard" onClick={handleClearButtonClick}>
             Очистить
           </Button>
         </div>
