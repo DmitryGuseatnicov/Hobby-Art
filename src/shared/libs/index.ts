@@ -1,2 +1,2 @@
 export { textSlice } from './textHelpers/textHelpers';
-export { scrollToTop } from './scroll/scroll';
+export * as dom from './dom/dom';
