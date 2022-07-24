@@ -1,20 +1,12 @@
-import React, { FC, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { FC } from 'react';
 
-import { AsyncDispatch } from 'entities/store';
 import { productModel } from 'entities/product';
 import { LinkCard, Title } from 'shared/ui';
 
-import { getCategories } from '../../actions';
 import './CatalogNav.scss';
 
 const CatalogNav: FC = () => {
   const categories = productModel.useCategories();
-
-  const dispatch = useDispatch<AsyncDispatch>();
-  useEffect(() => {
-    dispatch(getCategories());
-  });
 
   return (
     <div className="catalog-nav">

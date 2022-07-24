@@ -11,3 +11,4 @@ export { LinkCard } from './LinkCard/LinkCard';
 export { CheckBox } from './CheckBox/CheckBox';
 export { CheckBoxList } from './CheckBoxList/CheckBoxList';
 export { Counter } from './Counter/Counter';
+export { Spinner } from './Spinner/Spinner';
