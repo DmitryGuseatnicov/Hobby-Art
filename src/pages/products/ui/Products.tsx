@@ -13,7 +13,30 @@ const Products = () => {
   const products = productModel.useProducts();
   const isLoading = productModel.useLoading();
 
-  if (isLoading && ref.current) dom.scrollTo(ref.current.offsetTop - 50);
+  if (isLoading && ref.current) {
+    dom.scrollTo(ref.current.offsetTop - 50);
+  }
+
+  const productElements =
+    products.length > 0 ? (
+      products.map((pr) => (
+        <div className="products__item" key={pr.id}>
+          <ProductCardMini
+            id={pr.id}
+            price={pr.price}
+            img={pr.img}
+            colors={pr.colors}
+            likes={pr.likes}
+            type={pr.type}
+            brand={pr.brand}
+            sku={pr.sku}
+          />
+        </div>
+      ))
+    ) : (
+      <div className="products__message-failed">К сожелению ни одного товара не найдено </div>
+    );
+
   return (
     <div className="products" ref={ref}>
       <div className="products__sidebar">
@@ -21,22 +44,11 @@ const Products = () => {
       </div>
       <div className="products__items">
         {isLoading ? (
-          <Spinner />
+          <div className="products__spinner">
+            <Spinner />
+          </div>
         ) : (
-          products.map((pr) => (
-            <div className="products__item" key={pr.id}>
-              <ProductCardMini
-                id={pr.id}
-                price={pr.price}
-                img={pr.img}
-                colors={pr.colors}
-                likes={pr.likes}
-                type={pr.type}
-                brand={pr.brand}
-                sku={pr.sku}
-              />
-            </div>
-          ))
+          productElements
         )}
       </div>
     </div>
